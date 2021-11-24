@@ -7,9 +7,6 @@
 #include<conio.h>
 #include<windows.h>
 #include<string.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <Windows.h>
 
 /* Macros */
 #define START_ROW 		5
