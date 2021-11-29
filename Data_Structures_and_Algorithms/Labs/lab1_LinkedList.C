@@ -1,3 +1,8 @@
+/* Lab 7 - Task 1 
+   Author: Mahmoud Kamal
+   Date:   23-11-2021
+*/
+
 #include<stdio.h>
 #include<stdlib.h>
 #include<conio.h>
