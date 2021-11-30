@@ -1,6 +1,6 @@
-/* Lab 7 - Task 1 
+/* Lab 1 - Task 1 
    Author: Mahmoud Kamal
-   Date:   23-11-2021
+   Date:   29-11-2021
 */
 
 #include<stdio.h>
@@ -117,7 +117,6 @@ int main(void)
 					if (de == 1)
 					{
 						printf("Done\n");
-						freeNode();
 					}
 					else if (de == 2)
 					{
@@ -187,6 +186,7 @@ int main(void)
 				{
 					menu();
 				}
+			break;
 		}
 	}
 	return 0;
@@ -322,38 +322,40 @@ int deleteNode(int loc)
 	int retVal = 0;
 	struct node* ptr;
 	struct node* cur;
-	if (!loc)
+	if(pHead)
 	{
-		ptr = pHead;
-		//pHead->Next->Prev = NULL;
-		pHead = pHead->Next;
-		free(ptr);
-		retVal = 1;
-	}
-	else
-	{
-		cur = pHead;
-		for (int i=0; (i<loc)&&cur; i++)
+		if (!loc)
 		{
-			cur = cur->Next;	
+			ptr = pHead;
+			pHead = pHead->Next;
+			pHead->Prev = NULL;
+			free(ptr);
+			retVal = 1;
 		}
-		if(cur)
+		else
 		{
-			if (cur==pTail)
-			{					
-				ptr = pTail;
-				pTail->Next = NULL;
-				pTail = ptr->Prev;
-				free(ptr);
-			}
-			else
+			cur = pHead;
+			for (int i=0; (i<loc)&&cur; i++)
 			{
-				ptr = cur;
-				cur->Prev->Next = cur->Next;
-				cur->Next->Prev = cur->Prev;
+				cur = cur->Next;	
+			}
+			if(cur)
+			{
+				if (cur==pTail)
+				{					
+					ptr = pTail;
+					pTail = ptr->Prev;
+					pTail->Next = NULL;
+				}
+				else
+				{
+					ptr = cur;
+					cur->Prev->Next = cur->Next;
+					cur->Next->Prev = cur->Prev;
+				}
+				retVal = 1;
 				free(ptr);
 			}
-			retVal = 0;
 		}
 	}
 	return retVal;
