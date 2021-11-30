@@ -58,17 +58,21 @@ Student dequeue(void)
 	Student result;
     if (front == EMPTY)
     {
-        //printf("Queue Underflow \n");
+        printf("Queue Underflow \n");
 		result.ID = QUEUE_EMPTY;
     }
     else
     {
 		result = queue[front];
-		for(int i=front; i<last; i++)
+		for(int i=0; i<last; i++)
 		{
 			queue[i] = queue[i+1];
 		}
 		last--;
+		if(last == EMPTY)
+		{
+			front = EMPTY;
+		}
     }
 	return result;
 }
