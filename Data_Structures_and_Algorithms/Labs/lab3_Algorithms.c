@@ -18,6 +18,7 @@ typedef struct
 Student arr1[5] = {{102, "Mahmoud"}, {104, "Mohamed"}, {100, "Ahmed"}, {105, "Ibra"}, {101, "Liva"}};
 
 /* Bubble Sort */
+/* By Name */
 void BubbleSort(Student* arr, int low, int high)
 {
 	int Swapped = 1, outerCounter, innerCounter;
@@ -40,6 +41,7 @@ void BubbleSort(Student* arr, int low, int high)
 }
 
 /* Merge Sort */
+/* By ID */
 void Merge(int low, int mid, int high)
 {
 	Student temp[5];
