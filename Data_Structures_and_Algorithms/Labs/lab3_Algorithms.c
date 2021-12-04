@@ -79,7 +79,6 @@ void Merge(int low, int mid, int high)
 		arr1[iterator] = temp[iterator];
 	}
 }
-
 void MergeSort(int low, int high)
 {
 	int mid;
