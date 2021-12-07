@@ -86,21 +86,79 @@ void printPostOrder(struct Node* pNode)
 	}
 }
 
+void menu(void)
+{
+    printf(" 1- Add element to the tree\n");
+    printf(" 2- Display InOrder\n");
+    printf(" 3- Display PreOrder\n");
+    printf(" 4- Display PostOrder\n");
+    printf(" 5- EXIT\n");
+}
+
+char getASCII(void)
+{
+	char ch;
+	ch = getch();
+	if (ch == -32)
+	{
+		ch = getch();
+	}
+	return ch;
+}
+
 void main(void)
 {
+	int flag = 1, select, data;
+	char ch;
 	struct Node* pRoot;
 	pRoot = NULL;
-	pRoot = InsertNode(pRoot,5);
-	InsertNode(pRoot,4);
-	InsertNode(pRoot,6);
-	InsertNode(pRoot,3);
-	InsertNode(pRoot,8);
-	InsertNode(pRoot,7);
 	
-	printf("InOrder: \n");
-	printInOrder(pRoot);
-	printf("PreOrder: \n");
-	printPreOrder(pRoot);
-	printf("PostOrder: \n");
-	printPostOrder(pRoot);
+	while(flag)
+	{
+		system("cls");
+		menu();
+		printf("Pleas Select: ");
+		scanf("%d",&select);
+		
+		switch(select)
+		{
+			case 1:
+				system("cls");
+				printf("Enter data: ");
+				scanf("%d",&data);
+				pRoot = InsertNode(pRoot,data);
+			break;
+			case 2:
+				system("cls");
+				printf("InOrder: \n");
+				printInOrder(pRoot);
+				printf("\nPress any key to show menu\n");
+				ch = getASCII();
+			break;
+			case 3:
+				system("cls");
+				printf("PreOrder: \n");
+				printPreOrder(pRoot);
+				printf("\nPress any key to show menu\n");
+				ch = getASCII();
+			break;
+			case 4:
+				system("cls");
+				printf("PostOrder: \n");
+				printPostOrder(pRoot);
+				printf("\nPress any key to show menu\n");
+				ch = getASCII();
+			break;
+			case 5:
+				system("cls");
+				printf("Bye Bye\n");
+				flag = 0;
+			break;
+			default:
+				printf("Error || Wrong Select\n");
+				printf("\nPress any key to show menu\n");
+				ch = getASCII();
+			break;
+		}
+	}
 }
