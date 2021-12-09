@@ -293,12 +293,12 @@ struct Student searchNode_ID(int id)
 	if(!ptr)
 	{
 		st.ID = -1;
-		return st;
 	}
 	else
 	{
-		return ptr->Data;
+		st = ptr->Data;
 	}
+	return st;
 }
 
 struct Student searchNode_Name(char* name)
@@ -309,32 +309,30 @@ struct Student searchNode_Name(char* name)
 	if(!ptr)
 	{
 		st.ID = -1;
-		return st;
 	}
 	else
 	{
-		return ptr->Data;
+		st = ptr->Data;
 	}
+	return st;
 }
 
 int deleteNode(int loc)
 {
 	int retVal = 0;
-	struct node* ptr;
 	struct node* cur;
 	if(pHead)
 	{
+		cur = pHead;
 		if (!loc)
 		{
-			ptr = pHead;
 			pHead = pHead->Next;
 			pHead->Prev = NULL;
-			free(ptr);
+			free(cur);
 			retVal = 1;
 		}
 		else
 		{
-			cur = pHead;
 			for (int i=0; (i<loc)&&cur; i++)
 			{
 				cur = cur->Next;	
@@ -342,19 +340,17 @@ int deleteNode(int loc)
 			if(cur)
 			{
 				if (cur==pTail)
-				{					
-					ptr = pTail;
-					pTail = ptr->Prev;
+				{				
+					pTail = cur->Prev;
 					pTail->Next = NULL;
 				}
 				else
 				{
-					ptr = cur;
 					cur->Prev->Next = cur->Next;
 					cur->Next->Prev = cur->Prev;
 				}
 				retVal = 1;
-				free(ptr);
+				free(cur);
 			}
 		}
 	}
