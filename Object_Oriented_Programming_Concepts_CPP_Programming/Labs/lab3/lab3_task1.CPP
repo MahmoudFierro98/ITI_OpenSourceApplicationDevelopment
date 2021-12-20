@@ -19,14 +19,14 @@ class Employee
 		name = new char[10];
 		id = 0;
 		salary = 1000;
-		name = " ";
+		strcpy(name, " ");
 	}
 	Employee(int i)
 	{
 		name = new char[10];
 		id = i;
 		salary = 1000;
-		name = " ";
+		strcpy(name, " ");
 	}
 	Employee(int i, char* n)
 	{
