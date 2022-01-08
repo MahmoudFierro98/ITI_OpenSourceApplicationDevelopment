@@ -3,8 +3,8 @@
    Date:   20-12-2021
 */
 
-#include<iostream>
-#include<conio>
+#include<iostream.h>
+#include<conio.h>
 
 struct Student
 {
@@ -16,11 +16,11 @@ Student fillStudent(void)
 {
 	Student std;
 	cout<<"Please Enter Name: ";
-	cint>>std.name;
+	cin>>std.name;
 	for(int i=0; i<4; i++)
 	{
 		cout<<"Please Enter grade #" << i << ": ";
-		cint>>std.grade[i];
+		cin>>std.grade[i];
 	}
 	return std;
 }
