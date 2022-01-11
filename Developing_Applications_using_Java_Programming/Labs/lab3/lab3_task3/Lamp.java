@@ -11,7 +11,7 @@ public class Lamp extends Applet
 {   
 	public void paint(Graphics g) 
 	{   
-		//g.drawLine(250,500,250,50);
+		//g.drawLine(250,500,250,50);	// Guide Line
 		g.drawLine(50,350,100,100);
 		g.drawLine(450,350,400,100);
 		g.drawArc(50,300,400,100,0,-180);
