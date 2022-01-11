@@ -17,7 +17,7 @@ public class Fonts2 extends Applet
 		{
 			Font font = new Font(fonts[i], Font.BOLD, 14);
 			g.setFont(font);
-			g.drawString(fonts[i], 0, (15*i));
+			g.drawString(fonts[i], 50, (100+15*i));
 		}
 	}    
 }  
