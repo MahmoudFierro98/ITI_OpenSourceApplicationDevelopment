@@ -22,17 +22,17 @@ public class RandBallApplet extends Applet implements Runnable
 	public void paint(Graphics g)
 	{
 		g.setColor(Color.red);
-		g.fillOval(x - r, y - r, r * 2, r * 2);
+		g.fillOval(x, y , r * 2, r * 2);
 	}
 	
 	public void run()
 	{
 		while(true)
 		{
-			if ((x - r + xl < 0) || (x + r + xl > getWidth())) xl = -xl;
-			if ((y - r + yl < 0) || (y + r + yl > getHeight())) yl = -yl;
+			if ((x + xl < 0) || (x + 2*r + xl > getWidth())) xl = -xl;
+			if ((y + yl < 0) || (y + 2*r + yl > getHeight())) yl = -yl;
 			x += xl;
-			y +=yl;
+			y += yl;
 			repaint();
 			try{th.sleep(100);}  
 			catch(Exception e){} 
