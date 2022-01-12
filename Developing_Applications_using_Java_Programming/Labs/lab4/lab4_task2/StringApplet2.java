@@ -8,11 +8,13 @@ import java.awt.*;
 import java.applet.*;
 import java.util.*;
 
-public class StringApplet1 extends Applet implements Runnable
+public class StringApplet2 extends Applet implements Runnable
 {
-	Thread th; 
-	int x = 0;
+	Thread th;
+	String str = "Java World";
+	int x = 0; 
 	
+	int stringWidth;
 	public void init()
 	{
 		th = new Thread(this);
@@ -21,9 +23,9 @@ public class StringApplet1 extends Applet implements Runnable
 	
 	public void paint(Graphics g)
 	{
-		g.drawString("Java World", x, 100);
+		stringWidth = g.getFontMetrics().stringWidth(str);
+		g.drawString(str, x, 100);
 	}
-	
 	public void run()
 	{
 		while(true)
@@ -34,7 +36,7 @@ public class StringApplet1 extends Applet implements Runnable
 			}
 			else
 			{
-				x = 0;
+				x = stringWidth * -1;
 			}
 			repaint();
 			try{th.sleep(100);}  
