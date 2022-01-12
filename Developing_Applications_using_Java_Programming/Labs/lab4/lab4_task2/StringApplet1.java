@@ -21,6 +21,7 @@ public class StringApplet1 extends Applet implements Runnable
 	
 	public void paint(Graphics g)
 	{
+		g.setColor(Color.red);
 		g.drawString("Java World", x, 100);
 	}
 	

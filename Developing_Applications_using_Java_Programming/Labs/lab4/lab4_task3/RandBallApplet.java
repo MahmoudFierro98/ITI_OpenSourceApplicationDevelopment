@@ -8,12 +8,10 @@ import java.awt.*;
 import java.applet.*;
 import java.util.*;
 
-public class StringApplet2 extends Applet implements Runnable
+public class RandBallApplet extends Applet implements Runnable
 {
-	Thread th;
-	String str = "Java World";
-	int x = 0; 
-	int stringWidth;
+	Thread th; 
+	int x = 150, y = 50, r = 20, xl = 10, yl = 8;
 	
 	public void init()
 	{
@@ -23,22 +21,18 @@ public class StringApplet2 extends Applet implements Runnable
 	
 	public void paint(Graphics g)
 	{
-		stringWidth = g.getFontMetrics().stringWidth(str);
 		g.setColor(Color.red);
-		g.drawString(str, x, 100);
+		g.fillOval(x - r, y - r, r * 2, r * 2);
 	}
+	
 	public void run()
 	{
 		while(true)
 		{
-			if(x < getWidth())
-			{				
-				x++;
-			}
-			else
-			{
-				x = stringWidth * -1;
-			}
+			if ((x - r + xl < 0) || (x + r + xl > getWidth())) xl = -xl;
+			if ((y - r + yl < 0) || (y + r + yl > getHeight())) yl = -yl;
+			x += xl;
+			y +=yl;
 			repaint();
 			try{th.sleep(100);}  
 			catch(Exception e){} 
