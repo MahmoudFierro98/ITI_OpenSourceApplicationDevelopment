@@ -1,5 +1,5 @@
 /** 
-	Lab 4 - Task 1 - Text Banner Applet
+	Lab 4 - Task 3 - Animation Ball Applet
 	Author: Mahmoud Mohamed Kamal
 	Date:   12-01-2022
 */
