@@ -26,7 +26,7 @@ public class HelloCSS extends Application
     {
         System.out.println("@ Constructor() Method: " + Thread.currentThread().getName());
     }
-	@Override
+    @Override
     public void init() 
     {
         System.out.println("@ Init() Method: " + Thread.currentThread().getName());
@@ -49,22 +49,22 @@ public class HelloCSS extends Application
         Rectangle rectangle = new Rectangle(0, 0, 400, 300);
         rectangle.setId("bg");
         /* Create Root branch */
-	    StackPane root = new StackPane();
+	StackPane root = new StackPane();
         root.getChildren().add(rectangle);
         root.getChildren().add(helloWorld);
         root.getChildren().add(reflectedHelloWorld);
         /* Create scene */
-	    Scene scene = new Scene(root, 400, 300);
+	Scene scene = new Scene(root, 400, 300);
         /* Load CSS Styles */
         scene.getStylesheets().add(getClass().getResource("Styles.css").toString());
         /* Set title */
-	    primaryStage.setTitle("Hello World");
-	    /* Add scene to stage */
-	    primaryStage.setScene(scene);
+	primaryStage.setTitle("Hello World");
+	/* Add scene to stage */
+	primaryStage.setScene(scene);
         /* Change Layout */
         primaryStage.initStyle(StageStyle.DECORATED);
         /* Start */
-	    primaryStage.show();
+	primaryStage.show();
     }
     public static void main(String args[])
     {
