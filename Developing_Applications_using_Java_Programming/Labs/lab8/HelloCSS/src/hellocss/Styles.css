@@ -1,0 +1,18 @@
+#bg
+{
+    -fx-fill: linear-gradient(black 0%, white 50%, black 100%);
+}
+#txt
+{
+    -fx-font-size: 60;
+    -fx-translate-y: -30;
+    -fx-fill: red;
+}
+#reflectedTxt
+{
+    -fx-fill: linear-gradient(transparent 20%, red 100%);
+    -fx-font-size: 60;
+    -fx-translate-y: 30;
+    -fx-scale-y: -1;
+    -fx-opacity: 0.8;
+}
