@@ -26,9 +26,9 @@ public class Hello extends Application
     {
         System.out.println("@ Constructor() Method: " + Thread.currentThread().getName());
     }
-	@Override
+    @Override
     public void init() 
-	{
+    {
         System.out.println("@ Init() Method: " + Thread.currentThread().getName());
     }
     @Override
@@ -38,7 +38,7 @@ public class Hello extends Application
     }
     @Override
     public void start(Stage primaryStage) throws Exception
-	{
+    {
         System.out.println("@ Start() Method: " + Thread.currentThread().getName());
         /* Text */
         Text helloWorld = new Text("Hello World");
@@ -54,22 +54,22 @@ public class Hello extends Application
         Rectangle rectangle = new Rectangle(0, 0, 400, 300);
         rectangle.setFill(linearGradient);
         /* Create Root branch */
-		StackPane root = new StackPane();
+	StackPane root = new StackPane();
         root.getChildren().add(rectangle);
         root.getChildren().add(helloWorld);
         /* Create scene */
-		Scene scene = new Scene(root, 400, 300);
+	Scene scene = new Scene(root, 400, 300);
         /* Set title */
-	    primaryStage.setTitle("Hello World");
-		/* Add scene to stage */
-		primaryStage.setScene(scene);
+	primaryStage.setTitle("Hello World");
+	/* Add scene to stage */
+	primaryStage.setScene(scene);
         /* Change Layout */
         primaryStage.initStyle(StageStyle.DECORATED);
         /* Start */
-		primaryStage.show();
-	}
+	primaryStage.show();
+    }
     public static void main(String args[])
-	{
+    {
         launch(args);
     }
 }
