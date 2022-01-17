@@ -1,5 +1,5 @@
 /** 
-	Lab 8 - Task 2 - Hello World (Use CSS style sheet.)
+	Lab 8 - Task 2 - Hello World (Use CSS style sheet)
 	Author: Mahmoud Mohamed Kamal
 	Date:   17-01-2022
 */
