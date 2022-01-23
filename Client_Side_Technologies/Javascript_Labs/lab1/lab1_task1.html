@@ -1,0 +1,31 @@
+<!--
+    Lab 1 - Task 1 - Login
+	Author: Mahmoud Mohamed Kamal
+	Date:   23-01-2022
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lap1 Login</title>
+    <script>
+        username = prompt("Username:");
+        password = prompt("Password:");
+
+        if((username == "admin") && (password == "421$$")){
+            alert("Welcome login success");
+        }else if((username != "admin") && (password == "421$$")){
+            alert("Error || Incorrect Username");
+        }else if((username == "admin") && (password != "421$$")){
+            alert("Error || Incorrect Password");
+        }else{
+            alert("Error || Incorrect Username and Password");
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

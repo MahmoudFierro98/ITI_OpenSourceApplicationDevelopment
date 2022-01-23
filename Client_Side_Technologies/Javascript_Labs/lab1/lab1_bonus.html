@@ -1,0 +1,68 @@
+<!--
+    Lab 1 - Task 2 - Calc (Bonus)
+	Author: Mahmoud Mohamed Kamal
+	Date:   23-01-2022
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lap2 Calc (Bonus)</title>
+    <script>
+        let number1, number2, result=0, operation, flag=true, con;
+        
+        while(flag)
+        {
+            number1   = result? result:Number(prompt("First Number ="));
+            number2   = Number(prompt("Second Number ="));
+
+            operation = prompt("Operation (sum,multi,sub,div,mod):");
+            switch(operation){
+                case "sum":
+                    result = number1 + number2;
+                    alert(number1 + " + " + number2 + " = " + result);
+                break;
+                case "multi":
+                    result = number1 * number2;
+                    alert(number1 + " * " + number2 + " = " + result);
+                break;
+                case "sub":
+                    result = number1 - number2;
+                    alert(number1 + " - " + number2 + " = " + result);
+                break;
+                case "div":
+                    result = number1 / number2;
+                    alert(number1 + " / " + number2 + " = " + result);
+                break;
+                case "mod":
+                    result = number1 % number2;
+                    alert(number1 + " % " + number2 + " = " + result);
+                break;
+                default:
+                    alert("Error | Incorrect Operatian");
+                break;
+            }
+
+            con = prompt("Other operation(y/n):");
+            switch(con){
+                case "y":
+                    flag = true;
+                break;
+                case "n":
+                    flag = false;
+                break;
+                default:
+                    flag = false;
+                    alert("Error | Incorrect -- Terminate!!");
+                break;
+            }
+        }
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

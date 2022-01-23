@@ -1,0 +1,49 @@
+<!--
+    Lab 1 - Task 2 - Calc
+	Author: Mahmoud Mohamed Kamal
+	Date:   23-01-2022
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lap2 Calc</title>
+    <script>
+        var number1   = Number(prompt("First Number ="));
+        var number2   = Number(prompt("Second Number ="));
+        var operation = prompt("Operation (sum,multi,sub,div,mod):");
+        var result    = 0;
+
+        switch(operation){
+            case "sum":
+                result = number1 + number2;
+                alert(number1 + " + " + number2 + " = " + result);
+            break;
+            case "multi":
+                result = number1 * number2;
+                alert(number1 + " * " + number2 + " = " + result);
+            break;
+            case "sub":
+                result = number1 - number2;
+                alert(number1 + " - " + number2 + " = " + result);
+            break;
+            case "div":
+                result = number1 / number2;
+                alert(number1 + " / " + number2 + " = " + result);
+            break;
+            case "mod":
+                result = number1 % number2;
+                alert(number1 + " % " + number2 + " = " + result);
+            break;
+            default:
+                alert("Error | Incorrect Operatian");
+            break;
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
