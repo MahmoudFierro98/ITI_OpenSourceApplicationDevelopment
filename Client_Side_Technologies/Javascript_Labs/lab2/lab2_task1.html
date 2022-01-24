@@ -1,0 +1,29 @@
+<!--
+    Lab 2 - Task 1
+	Author: Mahmoud Mohamed Kamal
+	Date:   24-01-2022
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 2 - Task1</title>
+    <script>
+        let num=0, numbers=[], sum=0, avg=0;
+
+        num = prompt("How many number he want?");
+        for(i=0; i<num; i++)
+        {
+            numbers[i] = Number(prompt("Enter number #"+i+" ="));
+            sum += numbers[i];
+        }
+        avg = sum/num;
+        alert("Sum = "+sum+"\nAverage = "+avg);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

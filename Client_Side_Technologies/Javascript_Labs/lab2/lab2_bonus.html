@@ -1,0 +1,78 @@
+<!--
+    Lab 2 - Bonus - Area Calculator
+	Author: Mahmoud Mohamed Kamal
+	Date:   24-01-2022
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 2 - Bonus</title>
+    <script>
+        function Circle(r){
+            this.r = r;
+            this.Area = function(){
+                return(3.14*r*r);
+            }
+        }
+        function Triangle(b,h){
+            this.b = b;
+            this.h = h;
+            this.Area = function(){
+                return(0.5*b*h);
+            }
+        }
+        function Square(a){
+            this.a = a
+            this.Area = function(){
+                return(a*a);
+            }
+        }
+        function Rectangle(l,w){
+            this.l = l
+            this.w = w
+            this.Area = function(){
+                return(l*w);
+            }
+        }
+
+        let flag = true;
+        do{
+            op = Number(prompt("Select:\n1-Circle\n2-Triangle\n3-Square\n4-Rectangle\n5-Exit"));
+
+            switch(op){
+                case 1:
+                    r = Number(prompt("Raduis ="));
+                    var c = new Circle(r);
+                    alert("Area = "+c.Area());
+                break;
+                case 2:
+                    b = Number(prompt("Base ="));
+                    h = Number(prompt("Height ="));
+                    var t = new Triangle(b,h);
+                    alert("Area = "+t.Area());
+                break;
+                case 3:
+                    a = Number(prompt("Length ="));
+                    var s = new Square(a);
+                    alert("Area = "+s.Area());
+                break;
+                case 4:
+                    l = Number(prompt("Length ="));
+                    w = Number(prompt("Width ="));
+                    var r = new Rectangle(l,w);
+                    alert("Area = "+r.Area());
+                break;
+                case 5:
+                    flag = false;
+                break;
+            }
+        }while(flag);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

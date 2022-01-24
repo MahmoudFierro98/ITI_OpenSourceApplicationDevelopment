@@ -1,0 +1,80 @@
+<!--
+    Lab 2 - Task 2 - Create phone book app
+	Author: Mahmoud Mohamed Kamal
+	Date:   24-01-2022
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 2 - Task 2</title>
+    <script>
+        function contact(name,phone)
+        {
+            this.name = name;
+            this.phone = phone;
+            this.setName = function(name){
+                this.name = name;
+            }
+            this.setPhone = function(phone){
+                this.phone = phone;
+            }
+            this.getName = function(){
+                return this.name;
+            }
+            this.getPhone = function(){
+                return this.phone;
+            }
+            this.printContact = function(){
+                alert("Name: "+this.name+"\nPhone: "+phone);
+            }
+        }
+
+        var phoneBook ={
+            contacts:[],
+            addNewContact:function(name,phone){
+                var newContact = new contact(name,phone);
+                phoneBook.contacts.push(newContact);
+            },
+            searchForContact:function(searchKeyword){
+                for(i =0; i<phoneBook.contacts.length; i++){
+                    var currentContact = phoneBook.contacts[i];
+                    if((searchKeyword == currentContact.name) || (searchKeyword == currentContact.phone)){
+                        currentContact.printContact();
+                        break;
+                    }
+                }
+            },
+            run:function(){
+                var flag = true;
+                do{
+                    var op = prompt("what do you want (add,search,exit)");
+                    switch(op){
+                        case "add":
+                            newName = prompt("Name:");
+                            phone = prompt("Phone:");
+                            phoneBook.addNewContact(newName,phone);
+                        break;
+                        case "search":
+                            searchKeyword = prompt("searchKeyword:");
+                            phoneBook.searchForContact(searchKeyword);
+                        break;
+                        case "exit":
+                            flag = false;
+                        break;
+                        default:
+                            alert("Error || Incorrect Option");
+                    }
+                }while(flag)
+            }
+        }
+        phoneBook.contacts.push(new contact("mahmoud","012345"))
+        phoneBook.run();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
