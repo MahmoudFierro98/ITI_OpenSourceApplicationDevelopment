@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.web.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="800.0" scaleShape="false" style="-fx-background-color: linear-gradient(#37077B, #FDB8A5);" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="playigscene.FXMLDocumentController">
+   <children>
+      <Group>
+         <children>
+            <Button layoutX="18.0" layoutY="17.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="117.0" style="-fx-background-color: #E4A593; -fx-background-radius: 20px;" text="Home" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+            <Button layoutX="18.0" layoutY="80.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="117.0" style="-fx-background-color: #E4A593; -fx-background-radius: 20px;" text="Log out" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+         </children>
+      </Group>
+      <Group layoutX="21.0">
+         <children>
+            <Circle fill="WHITE" layoutX="132.0" layoutY="273.0" radius="79.0" stroke="#e4a593" strokeType="INSIDE" strokeWidth="15.0" />
+            <Label layoutX="105.0" layoutY="214.0" text="X" textFill="#e4a593">
+               <font>
+                  <Font name="System Bold" size="80.0" />
+               </font>
+            </Label>
+         </children>
+      </Group>
+      <Group layoutX="21.0">
+         <children>
+            <Label layoutX="22.0" layoutY="358.0" style="-fx-background-color: #e4a593;" text="Player1_Name" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="34.0" />
+               </font>
+            </Label>
+            <Label layoutX="84.0" layoutY="408.0" text="50 Points" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </Group>
+      <Group layoutX="516.0">
+         <children>
+            <Circle fill="WHITE" layoutX="128.0" layoutY="273.0" radius="79.0" stroke="#5b3379" strokeType="INSIDE" strokeWidth="15.0" />
+            <Label layoutX="98.0" layoutY="214.0" text="O" textFill="#5b3379">
+               <font>
+                  <Font name="System Bold" size="80.0" />
+               </font>
+            </Label>
+         </children>
+      </Group>
+      <Group layoutX="508.0">
+         <children>
+            <Label layoutX="22.0" layoutY="358.0" style="-fx-background-color: #5b3379;" text="Player2_Name" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="34.0" />
+               </font>
+            </Label>
+            <Label layoutX="84.0" layoutY="408.0" text="50 Points" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </Group>
+      <Group layoutX="-18.0" layoutY="-35.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#2626267a" height="319.0" layoutX="175.0" layoutY="502.0" stroke="BLACK" strokeType="INSIDE" width="487.0" />
+            <Button layoutX="176.0" layoutY="608.0" mnemonicParsing="false" prefHeight="104.0" prefWidth="161.0" style="-fx-background-color: transparent;" text="O" textAlignment="CENTER" textFill="#5b3379">
+               <font>
+                  <Font name="System Bold" size="48.0" />
+               </font></Button>
+            <Button layoutX="176.0" layoutY="502.0" mnemonicParsing="false" prefHeight="104.0" prefWidth="161.0" style="-fx-background-color: transparent;" text="X" textAlignment="CENTER" textFill="#e4a593" textOverrun="CENTER_ELLIPSIS">
+               <font>
+                  <Font name="System Bold" size="48.0" />
+               </font></Button>
+            <Separator layoutX="176.0" layoutY="605.0" prefHeight="0.0" prefWidth="486.0" style="-fx-background-color: white;" />
+            <Separator layoutX="176.0" layoutY="711.0" prefHeight="0.0" prefWidth="486.0" style="-fx-background-color: white;" />
+            <Separator layoutX="337.0" layoutY="503.0" orientation="VERTICAL" prefHeight="316.0" prefWidth="0.0" style="-fx-background-color: white;" />
+            <Separator layoutX="498.0" layoutY="502.0" orientation="VERTICAL" prefHeight="316.0" prefWidth="0.0" style="-fx-background-color: white;" />
+            <Button layoutX="340.0" layoutY="502.0" mnemonicParsing="false" prefHeight="104.0" prefWidth="161.0" style="-fx-background-color: transparent;" />
+            <Button layoutX="340.0" layoutY="608.0" mnemonicParsing="false" prefHeight="104.0" prefWidth="161.0" style="-fx-background-color: transparent;" textAlignment="CENTER" />
+            <Button layoutX="339.0" layoutY="714.0" mnemonicParsing="false" prefHeight="104.0" prefWidth="161.0" style="-fx-background-color: transparent;" />
+            <Button layoutX="501.0" layoutY="502.0" mnemonicParsing="false" prefHeight="104.0" prefWidth="161.0" style="-fx-background-color: transparent;" />
+            <Button layoutX="501.0" layoutY="608.0" mnemonicParsing="false" prefHeight="104.0" prefWidth="161.0" style="-fx-background-color: transparent;" />
+            <Button layoutX="501.0" layoutY="714.0" mnemonicParsing="false" prefHeight="104.0" prefWidth="161.0" style="-fx-background-color: transparent;" />
+            <Button layoutX="176.0" layoutY="714.0" mnemonicParsing="false" prefHeight="104.0" prefWidth="161.0" style="-fx-background-color: transparent;" text="X" textAlignment="CENTER" textFill="#e4a593" textOverrun="CENTER_ELLIPSIS">
+               <font>
+                  <Font name="System Bold" size="48.0" />
+               </font>
+            </Button>
+         </children>
+      </Group>
+      <Group layoutX="42.0" layoutY="1.0">
+         <children>
+            <Label layoutX="678.0" text="O" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="64.0" />
+               </font>
+            </Label>
+            <Label layoutX="636.0" text="X" textFill="#e4a593">
+               <font>
+                  <Font name="System Bold" size="64.0" />
+               </font>
+            </Label>
+            <Label layoutX="678.0" layoutY="50.0" text="O" textFill="#e4a593">
+               <font>
+                  <Font name="System Bold" size="64.0" />
+               </font>
+            </Label>
+            <Label layoutX="636.0" layoutY="50.0" text="X" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="64.0" />
+               </font>
+            </Label>
+         </children>
+      </Group>
+   </children>
+</AnchorPane>
