@@ -1,0 +1,187 @@
+<!--
+    Lab 3 - Task 1 - Calculator UI
+	Author: Mahmoud Mohamed Kamal
+	Date:   26-01-2022
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator UI</title>
+    <style>
+        .container{
+            user-select:none;
+            width:320px;
+            background-color: gray;
+            border:2px black solid;
+            height: 400px;
+            position: relative;
+            left:50%;
+            top:50%;
+            transform: translate(-50%,-50%);
+        }
+
+        .screen{
+            width:280px;
+            margin: 10px;
+            height: 70px;
+            background-color: white;
+            color: black;
+            font-size: 30px;
+            line-height: 70px;
+            padding: 10px;
+            border-radius: 20px;
+        }
+
+        .btn{
+            box-sizing: border-box;
+            width:76px;
+            height: 50px;
+            font-size: 30px;
+            background-color: white;
+            margin:2px;
+            float:left;
+            text-align: center;
+            line-height: 50px;
+            border-radius: 10px;
+        }
+
+        .btn:hover{
+            background-color: gray;
+        }
+
+        .currentOperation{
+            font-size: 11px;
+            margin-top: -30px;
+            margin-left: 280px;
+            line-height: 20px;
+            background-color: gray;
+            border-radius: 1px;
+            width: 20px;
+            height: 15px;
+            margin-bottom: 10px;
+            color:white;
+            text-align: center;
+        }
+        .op-btn{
+            background-color: blue;
+        }
+
+        .zero-btn{
+            width:154px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="calc"></div>
+    <div class="container">
+        <div class="screen">0 </div><div class="currentOperation">&nbsp;</div>
+        <div class="btnsContainer">
+            <div class="btn op-btn" onclick="clearCalc()">C</div>
+            <div class="btn op-btn" onclick="negtiveNum()">+/-</div>
+            <div class="btn op-btn" onclick="btnOpPress('%')">%</div>
+            <div class="btn op-btn" onclick="btnOpPress('/')">/</div>
+            <div class="btn" onclick="btnPress('7')">7</div>
+            <div class="btn" onclick="btnPress('8')">8</div>
+            <div class="btn" onclick="btnPress('9')">9</div>
+            <div class="btn op-btn" onclick="btnOpPress('*')">*</div>
+            <div class="btn" onclick="btnPress('4')">4</div>
+            <div class="btn" onclick="btnPress('5')">5</div>
+            <div class="btn" onclick="btnPress('6')">6</div>
+            <div class="btn op-btn" onclick="btnOpPress('-')">-</div>
+            <div class="btn" onclick="btnPress('1')">1</div>
+            <div class="btn" onclick="btnPress('2')">2</div>
+            <div class="btn" onclick="btnPress('3')">3</div>
+            <div class="btn op-btn"  onclick="btnOpPress('+')">+</div>
+            <div class="btn" onclick="btnPress('.')">.</div>
+            <div class="btn zero-btn" onclick="btnPress('0')">0</div>
+            <div class="btn op-btn" onclick="btnEqualPress()">=</div>
+        </div>
+    </div>
+    <script>
+        var screenEle = document.getElementsByClassName("screen")[0];
+        var screenCurrentOperation = document.getElementsByClassName("currentOperation")[0];
+        var screenData = "0";
+        var number1 =0;
+        var op = "";
+        var shouldScreenClear = false;
+
+        function clearCalc(){
+            setOperation("")
+            screenData = "0";
+            displayDataOnScreen();
+        }
+
+        function negtiveNum(){
+            screenData *= -1;
+            displayDataOnScreen();
+        }
+
+        function displayDataOnScreen(){
+            screenEle.innerHTML = screenData;
+        }
+
+        function setOperation(operation){
+            op = operation;
+            screenCurrentOperation.innerHTML=op+"&nbsp;";
+        }
+
+        function btnPress(number){
+            if(screenData=="0" && number!=".")
+                screenData="";
+
+
+            if(shouldScreenClear){
+                screenData="";
+                shouldScreenClear=false;
+            }
+
+            if(number=="." && screenData.indexOf(".")>-1)
+                return;
+            
+            screenData+=number;
+            displayDataOnScreen();
+        }
+
+
+        function btnOpPress(operation){
+            number1 = Number(screenData);
+            setOperation(operation);
+            shouldScreenClear=true;
+        }
+
+        function btnEqualPress(){
+            if(op!=""){
+                var number2 = Number(screenData);
+                var result;
+                switch(op){
+                    case '+':
+                    result = number1+number2;
+                    break;
+                    case '-':
+                    result = number1-number2;
+                    break;
+                    case '*':
+                    result = number1*number2;
+                    break;
+                    case '/':
+                    result = number1/number2;
+                    break;
+                    case '%':
+                    result = number1%number2;
+                    break;
+                }
+
+                if(result!=undefined){
+                    screenData = result.toString();
+                    displayDataOnScreen();
+                }
+                setOperation("");
+                shouldScreenClear=true;
+            }
+        }
+    </script>
+</body>
+</html>
