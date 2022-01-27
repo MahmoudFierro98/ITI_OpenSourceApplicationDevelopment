@@ -22,8 +22,8 @@ import java.util.logging.Logger;
 public class PlayingSceneBase extends AnchorPane /*implements Runnable*/ {
 
     protected final Group group;
-    protected final Button homeBtn;
-    protected final Button logoutBtn;
+    protected final Button button;
+    protected final Button button0;
     protected final Group group0;
     protected final Circle circle;
     protected final Label label;
@@ -48,49 +48,32 @@ public class PlayingSceneBase extends AnchorPane /*implements Runnable*/ {
     protected final Label label6;
     protected final Label label7;
     protected final Label label8;
-    protected final AnchorPane gameStatePane;
-    protected final Button replayBtn;
-    protected final Button exitBtn;
-    protected final Label gameStateLabel;
-    protected final Label gamePointsLabel;
 
     /* Turn X or O flag */
     private boolean turnX;
     /* Win Flag check winnig cases */
-    private boolean finishFlag;
+    private boolean winFlag;
     /* Save record of the game and to check the state of winnig cases */
     private char[] state = new char[9];
     private int counter;
     /* Pressed Flags for play buttons */
     private boolean[] playButtonPressed = new boolean[9];
-    /* Play Mode */
-    String playMode;
-    /* Players Name */
-    String player1Name;
-    String player2Name;
-    /* Players Points */
-    int player1Points;
-    int player2Points;
-    /* Player Side */
-    char playerSide;
 //    Thread th;
     public PlayingSceneBase() 
     {
         /* Initialization */
         turnX = true;
-        finishFlag = false;
+        winFlag = false;
         for(int i=0; i<9; i++)
         {
             state[i] = 'z';
             playButtonPressed[i] = false;     
         }
         counter = 0;
-        playMode = "vsComputer";
-        playerSide = 'o';
 
         group = new Group();
-        homeBtn = new Button();
-        logoutBtn = new Button();
+        button = new Button();
+        button0 = new Button();
         group0 = new Group();
         circle = new Circle();
         label = new Label();
@@ -118,11 +101,6 @@ public class PlayingSceneBase extends AnchorPane /*implements Runnable*/ {
         label6 = new Label();
         label7 = new Label();
         label8 = new Label();
-        gameStatePane = new AnchorPane();
-        replayBtn = new Button();
-        exitBtn = new Button();
-        gameStateLabel = new Label();
-        gamePointsLabel = new Label();
 
         setMaxHeight(USE_PREF_SIZE);
         setMaxWidth(USE_PREF_SIZE);
@@ -133,32 +111,26 @@ public class PlayingSceneBase extends AnchorPane /*implements Runnable*/ {
         setScaleShape(false);
         setStyle("-fx-background-color: linear-gradient(#37077B, #FDB8A5);");
 
-        homeBtn.setLayoutX(18.0);
-        homeBtn.setLayoutY(17.0);
-        homeBtn.setMnemonicParsing(false);
-        homeBtn.setPrefHeight(47.0);
-        homeBtn.setPrefWidth(117.0);
-        homeBtn.setStyle("-fx-background-color: #E4A593; -fx-background-radius: 20px;");
-        homeBtn.setText("Home");
-        homeBtn.setTextFill(javafx.scene.paint.Color.WHITE);
-        homeBtn.setFont(new Font("System Bold", 15.0));
-        homeBtn.setOnAction((javafx.event.ActionEvent e) -> {
-            System.exit(0);
-        });
+        button.setLayoutX(18.0);
+        button.setLayoutY(17.0);
+        button.setMnemonicParsing(false);
+        button.setPrefHeight(47.0);
+        button.setPrefWidth(117.0);
+        button.setStyle("-fx-background-color: #E4A593; -fx-background-radius: 20px;");
+        button.setText("Home");
+        button.setTextFill(javafx.scene.paint.Color.WHITE);
+        button.setFont(new Font("System Bold", 15.0));
 
-        logoutBtn.setLayoutX(18.0);
-        logoutBtn.setLayoutY(80.0);
-        logoutBtn.setMnemonicParsing(false);
-        logoutBtn.setPrefHeight(47.0);
-        logoutBtn.setPrefWidth(117.0);
-        logoutBtn.setStyle("-fx-background-color: #E4A593; -fx-background-radius: 20px;");
-        logoutBtn.setText("Log out");
-        logoutBtn.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        logoutBtn.setTextFill(javafx.scene.paint.Color.WHITE);
-        logoutBtn.setFont(new Font("System Bold", 15.0));
-        logoutBtn.setOnAction((javafx.event.ActionEvent e) -> {
-            System.exit(0);
-        });
+        button0.setLayoutX(18.0);
+        button0.setLayoutY(80.0);
+        button0.setMnemonicParsing(false);
+        button0.setPrefHeight(47.0);
+        button0.setPrefWidth(117.0);
+        button0.setStyle("-fx-background-color: #E4A593; -fx-background-radius: 20px;");
+        button0.setText("Log out");
+        button0.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        button0.setTextFill(javafx.scene.paint.Color.WHITE);
+        button0.setFont(new Font("System Bold", 15.0));
 
         group0.setLayoutX(21.0);
 
@@ -328,56 +300,8 @@ public class PlayingSceneBase extends AnchorPane /*implements Runnable*/ {
         label8.setTextFill(javafx.scene.paint.Color.WHITE);
         label8.setFont(new Font("System Bold", 64.0));
 
-        /* Game States (Win or Lose) + Points */
-        gameStatePane.setLayoutX(122.0);
-        gameStatePane.setLayoutY(73.0);
-        gameStatePane.setPrefHeight(455.0);
-        gameStatePane.setPrefWidth(557.0);
-        gameStatePane.setStyle("-fx-background-color: #2323237a;");
-        gameStatePane.setVisible(false);
-
-        replayBtn.setLayoutX(204.0);
-        replayBtn.setLayoutY(234.0);
-        replayBtn.setMnemonicParsing(false);
-        replayBtn.setPrefHeight(85.0);
-        replayBtn.setPrefWidth(150.0);
-        replayBtn.setStyle("-fx-background-color: #E4A593; -fx-background-radius: 20px;");
-        replayBtn.setText("Re-Play");
-        replayBtn.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        replayBtn.setTextFill(javafx.scene.paint.Color.WHITE);
-        replayBtn.setFont(new Font("System Bold", 30.0));
-        replayBtn.setOnAction((javafx.event.ActionEvent e) -> {
-            newGame();
-        });
-
-        exitBtn.setLayoutX(204.0);
-        exitBtn.setLayoutY(335.0);
-        exitBtn.setMnemonicParsing(false);
-        exitBtn.setPrefHeight(85.0);
-        exitBtn.setPrefWidth(150.0);
-        exitBtn.setStyle("-fx-background-color: #523178; -fx-background-radius: 20px;");
-        exitBtn.setText("Exit");
-        exitBtn.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        exitBtn.setTextFill(javafx.scene.paint.Color.WHITE);
-        exitBtn.setFont(new Font("System Bold", 30.0));
-        exitBtn.setOnAction((javafx.event.ActionEvent e) -> {
-            System.exit(0);
-        });
-
-        gameStateLabel.setLayoutX(194.0);
-        gameStateLabel.setLayoutY(47.0);
-        gameStateLabel.setText("You win");
-        gameStateLabel.setTextFill(javafx.scene.paint.Color.WHITE);
-        gameStateLabel.setFont(new Font("System Bold", 45.0));
-
-        gamePointsLabel.setLayoutX(213.0);
-        gamePointsLabel.setLayoutY(145.0);
-        gamePointsLabel.setText("+5 Points");
-        gamePointsLabel.setTextFill(javafx.scene.paint.Color.valueOf("#e4a593"));
-        gamePointsLabel.setFont(new Font("System Bold", 29.0));
-
-        group.getChildren().add(homeBtn);
-        group.getChildren().add(logoutBtn);
+        group.getChildren().add(button);
+        group.getChildren().add(button0);
         getChildren().add(group);
         group0.getChildren().add(circle);
         group0.getChildren().add(label);
@@ -406,37 +330,13 @@ public class PlayingSceneBase extends AnchorPane /*implements Runnable*/ {
         group5.getChildren().add(label7);
         group5.getChildren().add(label8);
         getChildren().add(group5);
-        gameStatePane.getChildren().add(replayBtn);
-        gameStatePane.getChildren().add(exitBtn);
-        gameStatePane.getChildren().add(gameStateLabel);
-        gameStatePane.getChildren().add(gamePointsLabel);
-        getChildren().add(gameStatePane);
 
         play();
     }
 
-    private void play()
+    private void play0()
     {
-        /* Check Play Mode and Player Side */
-        if(playMode.equals("vsComputer"))
-        {
-            if(playerSide == 'x')
-            {
-                playXvsComputerO();
-            }
-            else if(playerSide == 'o')
-            {
-                playOvsComputerX();
-            }
-        }
-        else if(playMode.equals("localPlay"))
-        {
-            localPlay();
-        }
-    }
-    private void localPlay()
-    {
-        if(!finishFlag)
+        if(!winFlag)
         {
             for(int i=0; i<9; i++)
             {
@@ -472,9 +372,9 @@ public class PlayingSceneBase extends AnchorPane /*implements Runnable*/ {
         }
     }
 
-    private void playXvsComputerO()
+    private void play()
     {
-        if(!finishFlag)
+        if(!winFlag)
         {
             if(turnX)
             {
@@ -485,6 +385,7 @@ public class PlayingSceneBase extends AnchorPane /*implements Runnable*/ {
                         if(!playButtonPressed[j])
                         {
                             playX(playButton[j],j);
+                            
                         }
                     });
                 }
@@ -510,9 +411,9 @@ public class PlayingSceneBase extends AnchorPane /*implements Runnable*/ {
         }
     }
 
-    private void playOvsComputerX()
+    private void playYvsComputerX()
     {
-        if(!finishFlag)
+        if(!winFlag)
         {
             if(turnX)
             {
@@ -574,7 +475,7 @@ public class PlayingSceneBase extends AnchorPane /*implements Runnable*/ {
 
     private void playXComputer()
     {
-        if((counter < 9) && !finishFlag)
+        if((counter < 9) && !winFlag)
         {
             int value = 1;
             do{ 
@@ -586,7 +487,7 @@ public class PlayingSceneBase extends AnchorPane /*implements Runnable*/ {
 
     private void playOComputer()
     {
-        if((counter < 9) && !finishFlag)
+        if((counter < 9) && !winFlag)
         {
             int value = 0;
             do{ 
@@ -631,11 +532,10 @@ public class PlayingSceneBase extends AnchorPane /*implements Runnable*/ {
         {   
             checkXO(state[8],2,5,8);
         }
-        else if((counter >= 9) && !finishFlag)
+        else if((counter >= 9) && !winFlag)
         {
-//            Alert alert = new Alert(Alert.AlertType.INFORMATION, "Draw");
-//            alert.show();
-            draw();
+            Alert alert = new Alert(Alert.AlertType.INFORMATION, "Draw");
+            alert.show();
             drawButtons();
         }
         play();
@@ -643,23 +543,21 @@ public class PlayingSceneBase extends AnchorPane /*implements Runnable*/ {
 
     void checkXO(int st, int btn1, int btn2, int btn3)
     {   
-        if(((st == 'x')&&(playerSide == 'x')) || ((st == 'o')&&(playerSide == 'o')))
+        if(st == 'x')
         {
-//            Alert alert = new Alert(Alert.AlertType.INFORMATION, "X WIN");
-//            alert.show();
-            win();
-            finishFlag = true;
+            Alert alert = new Alert(Alert.AlertType.INFORMATION, "X WIN");
+            alert.show();
+            winFlag = true;
             /* Color the buttons */
             winningButton(playButton[btn1]);
             winningButton(playButton[btn2]);
             winningButton(playButton[btn3]);
         }
-        else if(((st == 'x')&&(playerSide != 'x')) || ((st == 'o')&&(playerSide != 'o')))
+        else if(st == 'o')
         {
-//            Alert alert = new Alert(Alert.AlertType.INFORMATION, "O WIN");
-//            alert.show();
-            lose();
-            finishFlag = true;
+            Alert alert = new Alert(Alert.AlertType.INFORMATION, "O WIN");
+            alert.show();
+            winFlag = true;
             /* Color the buttons */
             winningButton(playButton[btn1]);
             winningButton(playButton[btn2]);
@@ -680,45 +578,5 @@ public class PlayingSceneBase extends AnchorPane /*implements Runnable*/ {
         {
             playButton[i].setStyle("-fx-background-color: YELLOW;");
         }
-    }
-
-    void win()
-    {
-        gameStateLabel.setText("You win");
-        gameStateLabel.setTextFill(javafx.scene.paint.Color.WHITE);
-        gamePointsLabel.setVisible(true);
-        gameStatePane.setVisible(true);
-    }
-
-    void lose()
-    {
-        gameStateLabel.setText("You Lost");
-        gameStateLabel.setTextFill(javafx.scene.paint.Color.RED);
-        gamePointsLabel.setVisible(false);
-        gameStatePane.setVisible(true);
-    }
-
-    void draw()
-    {
-        gameStateLabel.setText("  Draw");
-        gameStateLabel.setTextFill(javafx.scene.paint.Color.RED);
-        gamePointsLabel.setVisible(false);
-        gameStatePane.setVisible(true);
-    }
-
-    void newGame()
-    {
-        turnX = true;
-        finishFlag = false;
-        counter = 0;
-        for(int i=0; i<9; i++)
-        {
-            state[i] = 'z';
-            playButtonPressed[i] = false;  
-            playButton[i].setStyle("-fx-background-color: transparent;");  
-            playButton[i].setText(""); 
-        }
-        gameStatePane.setVisible(false);
-        play();
     }
 }
