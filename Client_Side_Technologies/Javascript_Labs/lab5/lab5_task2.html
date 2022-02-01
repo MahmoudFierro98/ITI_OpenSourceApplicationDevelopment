@@ -1,0 +1,223 @@
+<!--
+    Lab 5 - Task 2 - Digital watch
+	Author: Mahmoud Mohamed Kamal
+	Date:   01-02-2022
+-->
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital watch</title>
+  <style>
+    * {
+      background-color: #6abe4e;
+    }
+
+    .container {
+      width: 700px;
+      background-color: white;
+      border: 2px black solid;
+      height: 600px;
+      position: relative;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .popup {
+      width: 400px;
+      background-color: #6abe4e;
+      color: white;
+      border: 2px black solid;
+      height: 385px;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      display: none;
+      text-align: center;
+    }
+
+    #watch {
+      width: 600px;
+      height: 70px;
+      background-color: #6abe4e;
+      color: white;
+      border: 10px black solid;
+      font-size: 30px;
+      line-height: 70px;
+      padding: 10px;
+      border-radius: 20px;
+      position: relative;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+
+    #day {
+      width: 60px;
+      height: 10px;
+      background-color: #bea04e;
+      color: white;
+      position: relative;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -260%);
+      text-align: center;
+      border: 2px black solid;
+      font-size: 25px;
+      line-height: 10px;
+      padding: 10px;
+      border-radius: 20px;
+    }
+
+    .btn {
+      box-sizing: border-box;
+      width: 280px;
+      height: 50px;
+      font-size: 30px;
+      background-color: #00b242;
+      margin: 2px;
+      float: left;
+      text-align: center;
+      line-height: 50px;
+      border-radius: 10px;
+      position: relative;
+      left: 50%;
+      top: 50%;
+      transform: translate(-48%, -12%);
+      color: white;
+    }
+
+    .btnAlarm {
+      box-sizing: border-box;
+      width: 185px;
+      height: 50px;
+      font-size: 30px;
+      background-color: #bea04e;
+      color: white;
+      margin: 2px;
+      float: left;
+      text-align: center;
+      line-height: 50px;
+      border-radius: 10px;
+      position: relative;
+      left: 50%;
+      top: 50%;
+      transform: translate(-102%, -247%);
+    }
+
+    .clear-btn {
+      background-color: red;
+    }
+
+    input {
+      background-color: white;
+      width: 40px;
+      text-align: center;
+      height: 34px;
+      color: black;
+    }
+
+    .alarm-text {
+      font-size: 25px;
+      text-align: center;
+      line-height: 50px;
+    }
+
+    .btn:hover {
+      background-color: gray;
+    }
+
+    .btnAlarm:hover {
+      background-color: gray;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div id="watch"></div>
+    <div id="day"></div>
+    <div class="btn" onclick="btnFn()">Set Alarm</div>
+    <div class="popup">
+      <div class="alarm-text">Set Alarm After</div>
+      <div class="hr-cont">
+        <div class="hr">HOURS</div>
+        <input type="text" id="hr" name="hr" placeholder="0" />
+      </div>
+      <div class="min-cont">
+        <div class="min">MINUTES</div>
+        <input type="text" id="min" name="min" placeholder="0" />
+      </div>
+      <div class="sec-cont">
+        <div class="sec">SECONDS</div>
+        <input type="text" id="sec" name="sec" placeholder="0" />
+      </div>
+      <div class="btnAlarm" onclick="setAlarm()">Set</div>
+      <div class="btnAlarm clear-btn" onclick="clearAlarm()">Clear</div>
+    </div>
+  </div>
+  <script>
+    var dayNum = (new Date()).getDay();
+
+    switch (dayNum) {
+      case 0:
+        day.innerHTML = "SUN";
+        break;
+      case 1:
+        day.innerHTML = "MON";
+        break;
+      case 2:
+        day.innerHTML = "TUE";
+        break;
+      case 3:
+        day.innerHTML = "WED";
+        break;
+      case 4:
+        day.innerHTML = "THR";
+        break;
+      case 5:
+        day.innerHTML = "FRI";
+        break;
+      case 6:
+        day.innerHTML = "SAT";
+        break;
+    }
+
+    function updateWatch() {
+      day
+      watch.innerHTML = ((new Date()).toLocaleTimeString());
+    }
+    setInterval(updateWatch, 1000);
+
+    function btnFn() {
+      document.getElementsByClassName("popup")[0].style.display = "block";
+    }
+
+    var start;
+    var period;
+
+    function startAlarm(){
+      alert("Alarm - Ding Ding\nFtom: "+start+"\nTo: "+((new Date()).toLocaleTimeString())+"\nPeriod: "+period+"ms");
+    }
+
+    function setAlarm(){
+      period = Number((Number(sec.value) + (Number(min.value)*60) + Number((hr.value*3600))) *1000);
+      setTimeout(startAlarm,period);
+      document.getElementsByClassName("popup")[0].style.display = "none";
+      start = ((new Date()).toLocaleTimeString());
+    }
+    function clearAlarm(){
+      sec.value = '0';
+      min.value = '0';
+      hr.value = '0';
+      document.getElementsByClassName("popup")[0].style.display = "none";
+    }
+  </script>
+</body>
+
+</html>
