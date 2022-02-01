@@ -1,0 +1,226 @@
+<!--
+    Lab 4 - Task 2 - Todo 
+	Author: Mahmoud Mohamed Kamal
+	Date:   27-01-2022
+-->
+<html>
+
+<head>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-width: 250px;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+    }
+
+    ul li {
+
+      position: relative;
+      padding: 12px 8px 12px 40px;
+      background: #eee;
+      font-size: 18px;
+      transition: 0.2s;
+
+      /* make the list items unselectable */
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    ul li:hover {
+      background: #ddd;
+    }
+
+    ul li.checked {
+      background: #888;
+      color: #fff;
+      text-decoration: line-through;
+    }
+
+    .close {
+      position: absolute;
+      right: 10px;
+      ;
+      top: 0;
+      padding: 12px 16px 12px 16px;
+    }
+
+    .done {
+      position: absolute;
+      right: 10%;
+      top: 0;
+      padding: 12px 16px 12px 16px;
+    }
+
+    .lst {
+      padding: 12px 16px 12px 16px;
+    }
+
+    .done:hover {
+      background-color: rgb(48, 120, 202);
+    }
+
+    .close:hover {
+      background-color: rgb(248, 44, 44);
+    }
+
+    .header {
+      background-color: #f44336;
+      padding: 30px 40px;
+      color: white;
+      text-align: center;
+    }
+
+    input[type="text"] {
+      margin: 0;
+      border: none;
+      border-radius: 0;
+      width: 75%;
+      padding: 10px;
+      float: left;
+      font-size: 16px;
+    }
+
+    /* Style the "Add" button */
+    #addtaskbtn {
+      padding: 10px;
+      width: 25%;
+      background: #afacac;
+      color: rgb(250, 246, 246);
+      float: left;
+      text-align: center;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+      border-radius: 0;
+    }
+
+
+    /* Style the header */
+    .header {
+      background-color: #c7cdf3;
+      padding: 30px 40px;
+      color: white;
+      text-align: center;
+    }
+
+    /* Clear floats after the header */
+    .header:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  </style>
+  <script>
+    const task = getElementById("task");
+
+  </script>
+</head>
+
+<body>
+  <div id="todo" class="header">
+    <h1>To do list</h1>
+    <input type="text" id="taskinput" placeholder="add task ..">
+    <span id="addtaskbtn" onclick="addTask()">Add Task</span>
+  </div>
+
+  <div>
+    <ul id="lst">
+
+    </ul>
+  </div>
+  <script>
+    var myNodelist = document.getElementsByTagName("LI");
+
+    var mylist = document.getElementsByTagName("LI");
+    var i;
+    for (i = 0; i < myNodelist.length; i++) {
+      var span = document.createElement("SPAN");
+      var dn = document.createTextNode("done");
+      span.className = "done";
+      span.appendChild(dn);
+      mylist[i].appendChild(span);
+    }
+
+
+    var deletetask = document.getElementsByClassName("close");
+    var i;
+    for (i = 0; i < deletetask.length; i++) {
+      deletetask[i].onclick = function () {
+        alert("delete");
+        var div = this.parentElement;
+        div.style.display = "none";
+      }
+    }
+
+    var doneTask = document.getElementsByClassName("done")
+    var i;
+    for (i = 0; i < doneTask.length; i++) {
+      doneTask[i].onclick = function () {
+        var d = this.parentElement;
+        d.className = "checked";
+      }
+    }
+
+    function addTask() {
+      var li = document.createElement("li");
+      var taskContent = document.getElementById("taskinput").value;
+      var t = document.createTextNode(taskContent);
+      li.appendChild(t);
+      document.getElementById("lst").appendChild(li);
+      document.getElementById("taskinput").value = "";
+      var myNodelist = document.getElementsByTagName("LI");
+      var i;
+      for (i = 0; i < myNodelist.length; i++) {
+        var span = document.createElement("SPAN");
+        var txt = document.createTextNode("delete");
+        span.className = "close";
+        span.appendChild(txt);
+        myNodelist[i].appendChild(span);
+      }
+
+      var deletetask = document.getElementsByClassName("close");
+      var i;
+      for (i = 0; i < deletetask.length; i++) {
+        deletetask[i].onclick = function () {
+          //alert("delete");
+          var div = this.parentElement;
+          div.style.display = "none";
+        }
+      }
+      var myNodelist = document.getElementsByTagName("LI");
+
+      var mylist = document.getElementsByTagName("LI");
+      var i;
+      for (i = 0; i < myNodelist.length; i++) {
+        var span = document.createElement("SPAN");
+        var dn = document.createTextNode("done");
+        span.className = "done";
+        span.appendChild(dn);
+        mylist[i].appendChild(span);
+      }
+
+      var doneTask = document.getElementsByClassName("done")
+      var i;
+      for (i = 0; i < doneTask.length; i++) {
+        doneTask[i].onclick = function () {
+          var d = this.parentElement;
+          d.className = "checked";
+        }
+      }
+
+    }
+
+  </script>
+</body>
+
+</html>
