@@ -1,0 +1,36 @@
+<!--
+    Lab 6 - Task 2 - Update your todo list to allow it to save the tasks to local storage
+	Author: Mahmoud Mohamed Kamal
+	Date:   02-02-2022
+    File:   index.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo List</title>
+    <link rel="stylesheet" href="TodoStyle.css">
+</head>
+
+<body>
+    <div class="container">
+        <ul id="myUL">
+            <!-- <li class="checked">Attend Lect2</li>
+            <li> Complete lab 2</li>
+            <li> Complete Bonus</li> -->
+        </ul>
+
+        <div id="myDIV" class="control flex">
+            <label id="task"> Task </label>
+            <input type="text" id="myInput" placeholder="Title...">
+            <span onclick="newElement()" class="addBtn">Add</span>
+        </div>
+    </div>
+    <!-- <script src="TodoScript.js"></script> -->
+    <script src="TodoWlocalStorage.js"></script>
+</body>
+
+</html>
