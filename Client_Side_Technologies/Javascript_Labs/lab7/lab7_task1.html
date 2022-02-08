@@ -1,0 +1,226 @@
+<!--
+    Lab 7 - Task 1 - login
+	Author: Mahmoud Mohamed Kamal
+	Date:   08-02-2022
+-->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        * {
+            background-color: #6abe4e;
+        }
+
+        .container {
+            width: 700px;
+            background-color: white;
+            border: 2px black solid;
+            height: 600px;
+            position: relative;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .output {
+            width: 600px;
+            margin: 10px;
+            height: 70px;
+            background-color: red;
+            color: white;
+            font-size: 30px;
+            line-height: 70px;
+            padding: 10px;
+            border-radius: 20px;
+            position: relative;
+            left: 50%;
+            top: 0%;
+            transform: translate(-50%, -0%);
+            visibility: hidden;
+            text-align: center;
+        }
+
+        #passwd {
+            width: 280px;
+            margin: 10px;
+            height: 70px;
+            background-color: gray;
+            color: black;
+            font-size: 30px;
+            line-height: 70px;
+            padding: 10px;
+            border-radius: 20px;
+            position: relative;
+            left: 50%;
+            top: 50%;
+            transform: translate(-159%, -50%);
+        }
+
+        #email {
+            width: 280px;
+            margin: 10px;
+            height: 70px;
+            background-color: gray;
+            color: black;
+            font-size: 30px;
+            line-height: 70px;
+            padding: 10px;
+            border-radius: 20px;
+            position: relative;
+            left: 50%;
+            top: 30%;
+            transform: translate(-50%, -50%);
+        }
+
+        .btn {
+            box-sizing: border-box;
+            width: 280px;
+            height: 50px;
+            font-size: 30px;
+            background-color: #00b242;
+            margin: 2px;
+            float: left;
+            text-align: center;
+            line-height: 50px;
+            border-radius: 10px;
+            position: relative;
+            left: 50%;
+            top: 50%;
+            transform: translate(-48%, -12%);
+            color: white;
+        }
+
+        .btn:hover {
+            background-color: gray;
+        }
+
+        .signup {
+            background-color: white;
+            position: relative;
+            left: 50%;
+            top: 50%;
+            transform: translate(-48%, -12%);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="output"></div>
+    <div class="container">
+        <input type="text" id="email" onchange="validateEmail(event)" name="email" placeholder="Email" />
+        <input type="password" id="passwd" onchange="validatePass(event)" name="passwd" placeholder="password" />
+        <div class="btn" onclick="login()">LOGIN</div>
+    </div>
+    <script>
+
+        var email = document.getElementById("email").value;
+        var pass = document.getElementById("passwd").value;
+        async function login() {
+
+            var email = document.getElementById("email").value;     // eve.holt@reqres.in
+            var pass = document.getElementById("passwd").value;     // cityslicka
+            var out = document.getElementsByClassName("output")[0];
+
+            var bodyObj = {
+                "email": email,
+                "password": pass
+            }
+
+            var resObj = await fetch("https://reqres.in/api/login", {
+                method: "post",
+                body: JSON.stringify(bodyObj),
+                headers: {
+                    "content-type": "application/json"
+                }
+            })
+
+
+            var bodyObj = await resObj.json();
+
+            if (bodyObj.token) {
+                localStorage.mytoken = bodyObj.token;
+                if (pass == "cityslicka") {
+                    out.style.visibility = "visible";
+                    out.style.backgroundColor = "Green";
+                    out.innerHTML = "Welcome login success";
+                    alert(localStorage.mytoken);
+                }
+                else {
+                    out.style.visibility = "visible";
+                    out.style.backgroundColor = "red";
+                    out.innerHTML = "Error || Incorrect Password";
+                }
+            } else {
+                out.style.visibility = "visible";
+                out.style.backgroundColor = "red";
+                out.innerHTML = "Error || Incorrect Email or Password";
+                alert(bodyObj.error);
+            }
+        }
+
+        function validateEmail(e) {
+            if (validateEmailRegex(e.target.value)) {
+
+            } else {
+                alert("Email not valid please correct it");
+                document.getElementById("email").value = "";
+            }
+        }
+        const validateEmailRegex = (email) => {
+            return String(email)
+                .toLowerCase()
+                .match(
+                    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+                )
+        }/*
+        const validatePassRegex = (pass) => {
+            return String(pass)
+                .match(
+                    /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/
+                )
+        }
+        function validatePass(e) {
+            if (validatePassRegex(e.target.value)) {
+
+            } else {
+                alert("Password not valid please correct it");
+                document.getElementById("passwd").value = "";
+            }
+        }*/
+
+        /*function btnFn() {
+            var email = document.getElementById("email").value;
+            var pass = document.getElementById("passwd").value;
+            var out = document.getElementsByClassName("output")[0];
+
+            if ((email == "eve.holt@reqres.in") && (pass == "cityslicka")) {
+                //alert("Welcome login success");
+                login();
+                out.style.visibility = "visible";
+                out.style.backgroundColor = "Green";
+                out.innerHTML = "Welcome login success";
+            } else if ((email != "mahmoudfierro@gmail.com") && (pass == "123Mmk98")) {
+                //alert("Error || Incorrect Email");
+                out.style.visibility = "visible";
+                out.style.backgroundColor = "red";
+                out.innerHTML = "Error || Incorrect Email";
+            } else if ((email == "mahmoudfierro@gmail.com") && (pass != "123Mmk98")) {
+                //alert("Error || Incorrect Password");
+                out.style.visibility = "visible";
+                out.style.backgroundColor = "red";
+                out.innerHTML = "Error || Incorrect Password";
+            } else {
+                //alert("Error || Incorrect Email and Password");
+                out.style.visibility = "visible";
+                out.style.backgroundColor = "red";
+                out.innerHTML = "Error || Incorrect Email and Password";
+            }
+        }*/
+    </script>
+</body>
+
+</html>

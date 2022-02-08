@@ -1,0 +1,65 @@
+<!--
+    Lab 7 - Task 2 - Display users data (image, email) in html page
+	Author: Mahmoud Mohamed Kamal
+	Date:   08-02-2022
+-->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users</title>
+    <script>
+
+        async function ajax(e) {
+            e.preventDefault();
+            var username = document.getElementById("username");
+            var usernameValue = username.value;
+
+            var userObj = {
+                name: "ahmed",
+                age: 30,
+                address: "alex"
+            }
+
+            var res = await fetch("https://reqres.in/api/users?page=2", {
+                method: "post",
+                body: JSON.stringify(userObj)
+            });
+
+            var obj = await res.json();
+            alert(obj.id);
+        }
+
+        async function getData() {
+            var resObj = await fetch("https://reqres.in/api/users?page=2");
+            var resBody = await resObj.json();
+
+            var usersArr = resBody.data;
+            var usersDiv = document.getElementById("users");
+            var usersHtml = usersArr.map(function (item) {
+                return `
+                    <h1>${item.last_name} ${item.first_name}</h1>
+                    <h6>${item.email}</h1>
+                    <img src="${item.avatar}" />
+                `;
+            })
+
+            var htmlCode = usersHtml.join("");
+
+
+            usersDiv.innerHTML = htmlCode;
+        }
+
+        getData();
+    </script>
+</head>
+
+<body>
+    <div id="users">
+
+    </div>
+</body>
+
+</html>
