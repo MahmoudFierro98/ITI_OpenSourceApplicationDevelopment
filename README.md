@@ -1,5 +1,2 @@
-# ITI Alexandria - 
-# Track: Open-Source Application Development - 
-# 9-months scholarship program - 
-# Intake42.
-
+# ITI Alexandria | 9-months scholarship program | Intake42.
+# Track: Open-Source Application Development.
