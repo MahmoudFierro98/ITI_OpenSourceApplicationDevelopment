@@ -1,0 +1,120 @@
+<!--
+    Lab 1 - Task 1
+	Author: Mahmoud Mohamed Kamal
+	Date:   16-02-2022
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 1 - Task 1</title>
+</head>
+
+<body>
+    <script>
+        class Shape {
+            x = 0;
+            y = 0;
+            constructor(x, y) {
+                this.x = x;
+                this.y = y;
+            }
+            getCircumference() { }
+            getArea() { }
+            log = () => console.log("Circumference: " + this.getCircumference() + ", Area: " + this.getArea() + ", Type: " + this.constructor.name);
+        }
+
+        class Rectangle extends Shape {
+            width = 0;
+            height = 0;
+            constructor(x, y, width, height) {
+                if (arguments.length == 1) {
+                    super(x.x, x.y);
+                    this.width = x.width;
+                    this.height = x.height;
+                } else {
+                    super(x, y);
+                    this.width = width;
+                    this.height = height;
+                }
+            }
+            getCircumference = () => (this.width + this.height) * 2;
+            getArea = () => this.width * this.height;
+        }
+
+        class Square extends Rectangle {
+            length = 0;
+            constructor(x, y, length) {
+                if (arguments.length == 1) {
+                    super(x.x, x.y, x.width, x.height);
+                } else {
+                    super(x, y, length, length);
+                    this.length = length;
+                }
+            }
+        }
+
+        class Oval extends Shape {
+            a = 0;
+            b = 0;
+            constructor(x, y, a, b) {
+                if (arguments.length == 1) {
+                    super(x.x, x.y);
+                    this.a = x.a;
+                    this.b = x.b;
+                } else {
+                    super(x, y);
+                    this.a = a;
+                    this.b = b;
+                }
+            }
+            getCircumference = () => (this.a) * 2 * Math.PI;
+            getArea = () => this.a * this.b * Math.PI;
+        }
+
+        class Circle extends Oval {
+            r = 0;
+            constructor(x, y, r) {
+                if (arguments.length == 1) {
+                    super(x.x, x.y, x.a, x.b);
+                } else {
+                    super(x, y, r, r);
+                    this.r = r;
+                }
+            }
+        }
+
+        class DrawShapes {
+            shapes = [];
+            addShape(shape) {
+                this.shapes.push(shape);
+            }
+            log() {
+                for (let i = 0; i < this.shapes.length; i++) {
+                    this.shapes[i].log();
+                }
+            }
+        }
+
+        let sh = new DrawShapes();
+        let r1 = new Rectangle(0, 0, 10, 5);
+        let r2 = new Rectangle(r1);
+        sh.addShape(r2);
+        let s1 = new Square(0, 0, 5);
+        let s2 = new Square(s1);
+        sh.addShape(s2);
+        let o1 = new Oval(0, 0, 10, 5);
+        let o2 = new Oval(o1);
+        sh.addShape(o2);
+        let c1 = new Circle(0, 0, 5);
+        let c2 = new Circle(c1);
+        sh.addShape(c2);
+        sh.log();
+    </script>
+</body>
+
+</html>

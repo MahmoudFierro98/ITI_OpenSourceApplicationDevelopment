@@ -1,0 +1,43 @@
+1-one from each group create new repo and choose one method git flow  or featuring workflow
+	(if you choose git flow you need to change default branch)
+
+Now we have 2 repo for each one
+
+1-each one create local branch and push it
+	- contribute person will try merge branch of Owner repo
+	- owner of repo will merge any branch to main
+
+
+2-each one fetch another remote branch
+	- create new local branch and make it remote
+	- contribute person try to get update any un-tracked comments without any merge
+
+
+3- rollback commit from local repo
+	- revert in your local then make new modify and commit it again, but get history before and after that to see what the diff
+	- add you note
+
+4- rollback make last comment same third comment
+	- get history
+	- add your note
+
+5- rollback to master commit ( search)
+	- (roll back to head master)
+
+
+6- log last 5 commit
+
+7 - display graph commit
+
+8- create file
+	- add it to staging area
+	- modify it
+	- switch to another branch
+
+9 -get diff between last comment and first comment
+
+
+bonus ** restrict push to master with open-PR
+
+report (between rebase and merge) 
+(revert, reset and checkout)

@@ -1,0 +1,15 @@
+- All branches local and remote:
+>git branch -a 
+
+- Create new branch
+>git checkout -b <branchName>
+>git switch -C <branchName>
+>git branch -B <branchName> --> //local
+
+- Switch new branch
+>git switch <branchName>
+
+- Rename branch
+>git branch -m 
+
+git pull == fetch --all & merge
