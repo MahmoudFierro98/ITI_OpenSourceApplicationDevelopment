@@ -42,8 +42,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } else if ((strlen($name) > MAX_NAME_LENGTH) && (!filter_var($email, FILTER_VALIDATE_EMAIL)) && (strlen($message) > MAX_MESSAGE_LENGTH)) {
             echo "*Name, Email & Message are not vaild.";
         } else {
-            echo "<h2>Thank you for contacting Us</h2><b>Name: </b>".$name."<br><b>Email: </b>".$email."<br><b>Message: </b>".$message;
+            echo "<h2>Thank you for contacting Us</h2><b>Name: </b>" . $name . "<br><b>Email: </b>" . $email . "<br><b>Message: </b>" . $message;
         }
+    }
+    function clearBtn() {
+        $name = "";
+        $email = "";
+        $message = "";
     }
 }
 ?>
@@ -79,9 +84,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
 
         <input id="submit" name="submit" type="submit" value="Send email" />
-        <input id="clear" name="clear" type="reset" value="clear form" />
-
+        <input id="clear" name="clear" onclick="clearBtn()" type="reset" value="clear form" />
     </form>
+    <script>
+        
+    </script>
 </body>
 
 </html>
