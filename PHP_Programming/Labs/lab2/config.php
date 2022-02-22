@@ -1,7 +1,7 @@
 <!--
-    Lab 1 
+    Lab 2
 	Author: Mahmoud Mohamed Kamal
-	Date:   21-01-2022
+	Date:   22-01-2022
     File: config.php
 -->
 
