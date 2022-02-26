@@ -1,0 +1,13 @@
+{
+  "name": "lab3/lab3",
+  "description": "Lab3",
+  "license": "MIT",
+  "autoload": {
+    "classmap": [
+      "Model"
+    ],
+    "files": [
+      "config.php"
+    ]
+  }
+}
