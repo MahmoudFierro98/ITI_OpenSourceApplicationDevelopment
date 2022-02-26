@@ -1,8 +1,8 @@
 <!--
-    Lab 2 
+	Lab 2
 	Author: Mahmoud Mohamed Kamal
-	Date:   22-01-2022
-    File: read_log.php
+	Date:   22-02-2022
+	File:   read_log.php
 -->
 
 <?php
