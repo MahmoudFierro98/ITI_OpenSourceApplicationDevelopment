@@ -1,0 +1,55 @@
+/*
+    Lab 1 - Assignment 1: Employee Data
+    Author: Mahmoud Mohamed Kamal
+    Date:   08-03-2022
+    File:   employee.css
+*/
+
+employees {
+    background-color: #000000;
+    width: 100%;
+}
+
+employee {
+    display: block;
+    margin-bottom: 30pt;
+    margin-left: 0pt;
+    border: 5px solid rgb(255, 255, 255);
+    width: 50%;
+    text-align: center;
+    margin-left: 25%;
+}
+
+name {
+    font-size: 20pt;
+    color: #ffffff;
+    display: block;
+}
+
+phone {
+    font-size: 20pt;
+    display: block;
+}
+
+phone[type="home"] {
+    color: #ff0000;
+}
+
+phone[type="work"] {
+    color: yellow;
+}
+
+phone[type="mobile"] {
+    color: #1c8e92;
+}
+
+address {
+    font-size: 20pt;
+    color: #ffffff;
+    display: block;
+}
+
+email {
+    font-size: 20pt;
+    color: #ffffff;
+}
