@@ -1,0 +1,37 @@
+<!--
+    Lab 2 - Task 1
+    Author: Mahmoud Mohamed Kamal
+    Date:   14-03-2022
+-->
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 2 - Task 1</title>
+    <script>
+        window.navigator.geolocation.getCurrentPosition((position) => {
+            document.write(position.coords.latitude, position.coords.longitude);
+        }, (error) => {
+            console.log(error);
+        })
+
+        let id = navigator.geolocation.watchPosition((position) => {
+            console.log(position)
+        }, (error) => {
+
+        }, {
+            timeout: 60000
+        })
+
+        navigator.geolocation.clearWatch(id);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

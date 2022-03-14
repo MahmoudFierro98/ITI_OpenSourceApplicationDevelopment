@@ -1,0 +1,37 @@
+<!--
+    Lab 2 - Task 2
+    Author: Mahmoud Mohamed Kamal
+    Date:   14-03-2022
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 2 - Task 2</title>
+    <script>
+        let db = window.openDatabase("onlinestore", "1.0", "online store", 1024 * 1024 * 5);
+        db.transaction((tx) => {
+            tx.executeSql("create table if not exists items (id int primary key,name varchar(200),amount int )", [], (tx, result) => {
+                tx.executeSql("insert into items (id,name,amount) values (?,?,?)", [1, "blouses", 50], (tx, result) => {
+
+                }, (tx, err) => {
+                    console.log(err);
+                })
+
+            }, (tx, err) => {
+                console.log("error:", err);
+            })
+            tx.executeSql("insert into items (id,name,amount) values (?,?,?)", [2, "blouses", 20]);
+        })
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

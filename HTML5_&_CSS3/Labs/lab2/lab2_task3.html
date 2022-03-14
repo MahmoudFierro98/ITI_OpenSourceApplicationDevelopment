@@ -1,0 +1,92 @@
+<!--
+    Lab 2 - Task 3
+    Author: Mahmoud Mohamed Kamal
+    Date:   14-03-2022
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Display Webcam Stream</title>
+
+    <style>
+        #container {
+            margin: 0px auto;
+            width: 500px;
+            height: 375px;
+            border: 10px #333 solid;
+        }
+        
+        #videoElement {
+            width: 500px;
+            height: 375px;
+            background-color: #666;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <video autoplay="true" id="videoElement">
+       
+	</video>
+
+        <button onclick="stop();">Stop Video</button>
+        <button onclick="takescreenshot();">Take ScreenShot</button>
+        <canvas id="showscreenshot"></canvas>
+        <img id="showscreenshotimg" />
+    </div>
+    <script>
+        var video = document.querySelector("#videoElement");
+        var canvas = document.querySelector("#showscreenshot");
+        var img = document.querySelector("#showscreenshotimg");
+
+        if (localStorage.mydraw) {
+            img.src = localStorage.mydraw;
+        }
+
+        async function startCamera() {
+            if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+                let stream = await navigator.mediaDevices.getUserMedia({
+                    video: true,
+                    audio: false
+                }, )
+                video.srcObject = stream;
+            }
+        }
+
+        startCamera();
+
+        function stop(e) {
+
+            var stream = video.srcObject;
+            var tracks = stream.getTracks();
+
+            for (var i = 0; i < tracks.length; i++) {
+                var track = tracks[i];
+                track.stop();
+            }
+
+            video.srcObject = null;
+        }
+
+        if (localStorage.myimage) {
+            img.src = localStorage.myimage;
+        }
+
+        function takescreenshot() {
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+            let ctx = canvas.getContext("2d");
+            ctx.drawImage(video, 0, 0);
+            let imgAsStr = canvas.toDataURL("image/webp");
+            console.log(imgAsStr);
+            localStorage.myimage = imgAsStr;
+            img.src = canvas.toDataURL("image/webp");
+        };
+    </script>
+</body>
+
+</html>
