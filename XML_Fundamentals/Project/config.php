@@ -10,4 +10,7 @@
 define("XML_FILE", "data.xml");
 define("ROOT_ELEMENT", "employees");
 define("ELEMENT", "employee");
-define("SEARCH_TAG", "Name");
+define("NAME_TAG", "Name");
+define("PHONE_TAG", "Phone");
+define("EMAIL_TAG", "Email");
+define("ADDRESS_TAG", "Address");
