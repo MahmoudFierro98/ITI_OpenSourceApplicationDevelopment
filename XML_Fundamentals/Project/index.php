@@ -5,7 +5,7 @@
     File:   index.php
 -->
 
-<!-- TODO: Insert -->
+<!-- TODO: CSS Stylesheet -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -24,6 +24,7 @@
     $data = new DOMDocument();
     $data->load(XML_FILE, LIBXML_NOBLANKS);
     $rootElement = $data->getElementsByTagName(ROOT_ELEMENT)[0];
+    $end = $rootElement->childElementCount - 1;
     ?>
     <form method="POST" action="">
         <input type="text" name="search" placeholder="Enter a Name" />
@@ -38,10 +39,9 @@
         }
         if (isset($_POST['search'])) {
             $searchKey = $_POST['search'];
-            $end = $rootElement->childElementCount - 1;
             $count = 0;
             foreach ($rootElement->childNodes as $childchildNode) {
-                $node = $childchildNode->getElementsByTagName(SEARCH_TAG)->item(0);
+                $node = $childchildNode->getElementsByTagName(NAME_TAG)->item(0);
                 if ($node->nodeValue == $searchKey) {
                     break;
                 } else {
@@ -71,6 +71,23 @@
         </div>
     </form>
     <?php
+    if (isset($_POST['insert'])) {
+        $newElement = $data->createElement(ELEMENT, '');
+        $name = $data->createElement(NAME_TAG, $_POST[NAME_TAG]);
+        $newElement->appendChild($name);
+        $phone = $data->createElement(PHONE_TAG, $_POST[PHONE_TAG]);
+        $newElement->appendChild($phone);
+        $email = $data->createElement(EMAIL_TAG, $_POST[EMAIL_TAG]);
+        $newElement->appendChild($email);
+        $address = $data->createElement(ADDRESS_TAG, $_POST[ADDRESS_TAG]);
+        $newElement->appendChild($address);
+        $rootElement->appendChild($newElement);
+        $data->formatOutput = true;
+        $data =  $data->save(XML_FILE);
+        $_SESSION['index'] = $end + 1;
+        $_SESSION['operation'] = 'Inserted';
+        header("Location: index.php");
+    }
     if (isset($_POST['edit'])) {
         foreach ($element->childNodes as $childchildNode) {
             $node = $element->getElementsByTagName($childchildNode->nodeName)->item(0);
@@ -91,12 +108,10 @@
         header("Location: index.php");
     }
     if (isset($_POST['prev'])) {
-        $end = $rootElement->childElementCount - 1;
         ($_SESSION['index'] == 0) ? $_SESSION['index'] = $end : --$_SESSION['index'];
         header("Location: index.php");
     }
     if (isset($_POST['next'])) {
-        $end = $rootElement->childElementCount - 1;
         ($_SESSION['index'] >= $end) ? $_SESSION['index'] = 0 : ++$_SESSION['index'];
         header("Location: index.php");
     }
