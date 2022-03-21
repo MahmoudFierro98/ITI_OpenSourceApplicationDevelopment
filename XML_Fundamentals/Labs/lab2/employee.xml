@@ -1,0 +1,52 @@
+﻿<!--
+    Lab 2
+    Author: Mahmoud Mohamed Kamal
+    Date:   10-03-2022
+    File:   employee.xml
+-->
+
+<employees>
+	<employee>
+		<name>Mahmoud</name>
+		<phones>
+			<phone type="home">0312345678</phone>
+			<phone type="work">0391234567</phone>
+			<phone type="mobile">01012345678</phone>
+		</phones>
+		<addresses>
+			<address>
+				<street>st1,</street> 
+				<buildingNumber>no1,</buildingNumber> 
+				<Region>AlMndra,</Region> 
+				<city>Alex,</city> 
+				<country>Egypt.</country>
+			</address> 
+			<address>
+				<street>st2,</street> 
+				<buildingNumber>no2,</buildingNumber> 
+				<Region>AlMndra,</Region> 
+				<city>Alex,</city> 
+				<country>Egypt.</country>
+			</address>
+		</addresses>
+		<email>mahmoud@gmail.com</email>
+	</employee>
+	<employee>
+		<name>Ahmed</name>
+		<phones>
+			<phone type="home">0312345678</phone>
+			<phone type="work">0391234567</phone>
+			<phone type="mobile">01012345678</phone>
+		</phones>
+		<addresses>
+			<address>
+				<street>st1,</street> 
+				<buildingNumber>no1,</buildingNumber> 
+				<Region>AlMndra,</Region> 
+				<city>Alex,</city> 
+				<country>Egypt.</country>
+			</address> 
+		</addresses>
+		<email>ahmed@gmail.com</email>
+	</employee>
+</employees>
