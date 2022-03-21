@@ -1,0 +1,7 @@
+https://stackoverflow.com/questions/31291317/php-is-not-recognized-as-an-internal-or-external-command-in-command-prompt
+Add C:\xampp\php to your PATH environment variable.(My Computer->properties -> Advanced system setting-> Environment Variables->edit path)
+
+$ composer install
+$ composer validate
+$ composer update
+$ composer dump-autoload
