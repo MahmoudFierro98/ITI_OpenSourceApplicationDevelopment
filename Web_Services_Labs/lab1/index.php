@@ -24,7 +24,6 @@ if (isset($_POST["egy_city"])) {
                 if ($k === 0) {
                     foreach ($val as $ke => $v) {
                         if ($ke === "description") echo $v . '<br>';
-                        //if ($ke === "icon") echo "<img src='$v'><br>";
                     }
                 }
             }
