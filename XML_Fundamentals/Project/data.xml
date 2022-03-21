@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<employees>
+  <employee>
+    <Name>Employee 00</Name>
+    <Phone>01000000000</Phone>
+    <Email>email@email.com</Email>
+    <Address>2nd street, Alexandria, Egypt</Address>
+  </employee>
+  <employee>
+    <Name>Employee 01</Name>
+    <Phone>01100000000</Phone>
+    <Email>email@email.com</Email>
+    <Address>2nd street, Alexandria, Egypt</Address>
+  </employee>
+  <employee>
+    <Name>Employee 02</Name>
+    <Phone>01200000000</Phone>
+    <Email>email@email.com</Email>
+    <Address>3rd street, Alexandria, Egypt</Address>
+  </employee>
+  <employee>
+    <Name>Employee 08</Name>
+    <Phone>01500000000</Phone>
+    <Email>email@email.com</Email>
+    <Address>4th street, Alexandria, Egypt</Address>
+  </employee>
+</employees>
+<!--
+    XML Project
+    Author: Mahmoud Mohamed Kamal
+    Date:   21-03-2022
+    File:   data.xml
+-->
