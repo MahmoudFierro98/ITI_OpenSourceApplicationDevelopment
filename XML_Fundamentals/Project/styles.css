@@ -1,0 +1,92 @@
+/*
+* XML Project
+* Author: Mahmoud Mohamed Kamal
+* Date:   22-03-2022
+* File:   styles.css
+*/
+
+* {
+    background-color: #189ed3;
+}
+
+h1 {
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+div {
+    background-color: #3c6586;
+    border-radius: 20px;
+    box-sizing: border-box;
+    height: 378px;
+    padding: 20px;
+    width: 500px;
+    margin: auto;
+    width: 57%;
+}
+
+.search {
+    height: 75px;
+    padding: 10px;
+    width: 200px;
+    margin: auto;
+    width: 57%;
+}
+
+.search>input[type=text] {
+    border-radius: 12px;
+    width: 84%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+.msg {
+    height: 60px;
+    text-align: center;
+    font-size: 25px;
+    width: 43%;
+    color: white;
+}
+
+.btns {
+    height: 100px;
+    width: 43%;
+}
+
+span {
+    background-color: #3c6586;
+    font-size: 20px;
+    color: aliceblue;
+    display: block;
+    text-align: center;
+}
+
+label {
+    background-color: #3c6586;
+    font-size: 20px;
+    color: rgb(0, 0, 0);
+}
+
+input[type=text] {
+    background-color: #000107;
+    border-radius: 12px;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+input[value] {
+    color: aliceblue;
+}
+
+input[type=submit] {
+    border-radius: 12px;
+    margin: 10px;
+    padding: 16px 32px;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    align-self: center;
+}

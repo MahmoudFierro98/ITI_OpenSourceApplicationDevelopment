@@ -5,8 +5,6 @@
     File:   index.php
 -->
 
-<!-- TODO: CSS Stylesheet -->
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,9 +13,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>XML - Project | By: Mahmoud M.Kamal</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
+    <h1>XML Project - Employees List</h1>
     <?PHP
     session_start();
     require_once("config.php");
@@ -26,11 +26,12 @@
     $rootElement = $data->getElementsByTagName(ROOT_ELEMENT)[0];
     $end = $rootElement->childElementCount - 1;
     ?>
-    <form method="POST" action="">
+    <form class="search" method="POST" action="">
         <input type="text" name="search" placeholder="Enter a Name" />
         <input type="submit" value="Search" />
     </form>
-    <div><?= $_SESSION['operation'] ?? ''; ?></div>
+    <div class="msg"><?= $_SESSION['operation'] ?? ''; ?></div>
+    <br />
     <form method="POST" action="">
         <?php
         unset($_SESSION['operation']);
@@ -38,23 +39,32 @@
             $_SESSION['index'] = 0;
         }
         if (isset($_POST['search'])) {
-            $searchKey = $_POST['search'];
-            $count = 0;
-            foreach ($rootElement->childNodes as $childchildNode) {
-                $node = $childchildNode->getElementsByTagName(NAME_TAG)->item(0);
-                if ($node->nodeValue == $searchKey) {
-                    break;
+            if (empty($_POST['search'])) {
+                $_SESSION['index'] = 0;
+            } else {
+                $searchKey = $_POST['search'];
+                $count = 0;
+                foreach ($rootElement->childNodes as $childchildNode) {
+                    $node = $childchildNode->getElementsByTagName(NAME_TAG)->item(0);
+                    if ($node->nodeValue == $searchKey) {
+                        break;
+                    } else {
+                        ++$count;
+                    }
+                }
+                if ($count <= $end) {
+                    $_SESSION['index'] = $count;
+                    $_SESSION['operation'] = "Found";
                 } else {
-                    ++$count;
+                    $_SESSION['operation'] = "Not Found";
                 }
             }
-            if ($count <= $end) {
-                $_SESSION['index'] = $count;
-            }
             unset($_POST['search']);
+            header("Location: index.php");
         }
         $element = $data->getElementsByTagName(ELEMENT)[$_SESSION['index']];
-        echo "ID: " . $_SESSION['index'];
+        echo "<div>";
+        echo "<span>ID: " . $_SESSION['index'] . "</span>";
         foreach ($element->childNodes as $childchildNode) {
         ?>
             <label for="<?= $childchildNode->nodeName ?>"><?= $childchildNode->nodeName ?></label>
@@ -62,12 +72,14 @@
         <?php
         }
         ?>
-        <div>
+        </div>
+        <br />
+        <div class="btns">
             <input type="submit" id='insert' value="Insert" name="insert">
             <input type="submit" id='edit' value="Edit" name="edit">
             <input type="submit" id='delete' value="Delete" name="delete">
-            <input type="submit" id='prev' value="prev" name="prev">
-            <input type="submit" id='next' value="next" name="next">
+            <input type="submit" id='prev' value="Prev" name="prev">
+            <input type="submit" id='next' value="Next" name="next">
         </div>
     </form>
     <?php
@@ -116,6 +128,7 @@
         header("Location: index.php");
     }
     ?>
+    <marquee>Created by: <a href="https://www.linkedin.com/in/mahmoudfierro98/" target = _blank>Mahmoud Mohamed Kamal</a></marquee>
 </body>
 
 </html>
