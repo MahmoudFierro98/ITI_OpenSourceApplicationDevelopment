@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tests>
+  <test className="SampleTest" methodName="test_name" prettifiedClassName="Sample" prettifiedMethodName="Name" status="0" time="0.000415496" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="SampleTest" methodName="test_password" prettifiedClassName="Sample" prettifiedMethodName="Password" status="0" time="0.000180646" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="SampleTest" methodName="test_email" prettifiedClassName="Sample" prettifiedMethodName="Email" status="0" time="0.000661703" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="SampleTest" methodName="test_name_Kamal" prettifiedClassName="Sample" prettifiedMethodName="Name Kamal" status="0" time="0.000144162" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="SampleTest" methodName="test_password_Kamal" prettifiedClassName="Sample" prettifiedMethodName="Password Kamal" status="0" time="0.000204525" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="SampleTest" methodName="test_email_Kamal" prettifiedClassName="Sample" prettifiedMethodName="Email Kamal" status="0" time="0.000261289" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+</tests>

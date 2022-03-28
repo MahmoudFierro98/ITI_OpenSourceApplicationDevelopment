@@ -1,0 +1,14 @@
+<!--
+ * Unit & Automated Testing - Lab 2 Exercise 4
+ * Author: Mahmoud Mohamed Kamal
+ * Date:   28-03-1998
+ * File:   phpunit.xml
+ -->
+ 
+ <phpunit bootstrap="bootstrap.php">
+  <testsuites>
+    <testsuite name="Sample">
+      <directory>tests</directory>
+    </testsuite>
+  </testsuites>
+</phpunit>

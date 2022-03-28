@@ -1,0 +1,7 @@
+Sample
+ [x] Name
+ [x] Password
+ [x] Email
+ [x] Name Kamal
+ [x] Password Kamal
+ [x] Email Kamal
