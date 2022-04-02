@@ -1,0 +1,250 @@
+<!--
+    CSS Frameworks Bootstrap - Lab 1
+    Author: Mahmoud Mohamed Kamal
+    Date: 02-04-2022
+    File: index.html    
+-->
+
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <title>The Flower Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js " integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4 " crossorigin="anonymous "></script>
+
+    <!-- <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="bootstrap.js"></script> -->
+</head>
+
+<body>
+    <header class="px-5">
+        <h1>
+            The Flower Blog
+        </h1>
+    </header>
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Archives</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                    <li class="subscribe">
+                        <a class="nav-link" href="#">Subscribe via. RSS</a>
+                    </li>
+                </ul>
+                <span class="navbar-text">
+      </span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <section id="intro" class="col-12">
+                <header>
+                    <h2>
+                        Do you love flowers as much as we do?</h2>
+                </header>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.</p>
+                <img src="images/intro_flower.png" alt="Flower" />
+            </section>
+        </div>
+
+
+        <div id="content" class="row">
+            <div id="mainContent" class="col-lg-8 col-md-12 col-sm-12">
+                <section>
+                    <article class="blogPost">
+                        <header>
+                            <h2>
+                                This is the title of a blog post</h2>
+                            <p>
+                                Posted on June 29th 2009 by <a href="#">Mads Kjaer</a> - <a href="#comments">3 comments</a>
+                            </p>
+                        </header>
+                        <div>
+                            <p>
+
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin euismod tellus eu orci imperdiet nec rutrum lacus blandit. Cras enim nibh, sodales ultricies elementum vel, fermentum id tellus. Proin metus odio, ultricies eu pharetra dictum, laoreet id
+                                odio. Curabitur in odio augue. Morbi congue auctor interdum. Phasellus sit amet metus justo. Phasellus vitae tellus orci, at elementum ipsum. In in quam eget diam adipiscing condimentum. Maecenas gravida diam vitae nisi
+                                convallis vulputate quis sit amet nibh. Nullam ut velit tortor. Curabitur ut elit id nisl volutpat consectetur ac ac lorem. Quisque non elit et elit lacinia lobortis nec a velit. Sed ac nisl sed enim consequat porttitor.</p>
+                            <figure>
+                                <img src="images/flower.png" alt="Flower" />
+                                <figcaption><i>This is a beautiful flower</i></figcaption>
+                            </figure>
+                            <br/>
+                            <p>
+                                Pellentesque ut sapien arcu, egestas mollis massa. Fusce lectus leo, fringilla at aliquet sit amet, volutpat non erat. Aenean molestie nibh vitae turpis venenatis vel accumsan nunc tincidunt. Suspendisse id purus vel felis auctor mattis non ac erat. Pellentesque
+                                sodales venenatis condimentum. Aliquam sit amet nibh nisi, ut pulvinar est. Sed ullamcorper nisi vel tortor volutpat eleifend. Vestibulum iaculis ullamcorper diam consectetur sagittis. Quisque vitae mauris ut elit semper
+                                condimentum varius nec nisl. Nulla tempus porttitor dolor ac eleifend. Proin vitae purus lectus, a hendrerit ipsum. Aliquam mattis lacinia risus in blandit.</p>
+                            <p>
+                                Vivamus vitae nulla dolor. Suspendisse eu lacinia justo. Vestibulum a felis ante, non aliquam leo. Aliquam eleifend, est viverra semper luctus, metus purus commodo elit, a elementum nisi lectus vel magna. Praesent faucibus leo sit amet arcu vehicula sed
+                                facilisis eros aliquet. Etiam sodales, enim sit amet mollis vestibulum, ipsum sapien accumsan lectus, eget ultricies arcu velit ut diam. Aenean fermentum luctus nulla, eu malesuada urna consequat in. Pellentesque habitant
+                                morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque massa lacus, sodales id facilisis ac, lobortis sed arcu. Donec hendrerit fringilla ligula, ac rutrum nulla bibendum id. Cras sapien ligula,
+                                tincidunt eget euismod nec, ultricies eu augue. Nulla vitae velit sollicitudin magna mattis eleifend. Nam enim justo, vulputate vitae pretium ac, rutrum at turpis. Aenean id magna neque. Sed rhoncus aliquet viverra.</p>
+                        </div>
+                    </article>
+                </section>
+                <section id="comments">
+                    <h3>
+                        Comments</h3>
+                    <article>
+                        <header>
+                            <a href="#">George Washington</a> on June 29th 2009 at 23:35
+                        </header>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.</p>
+                    </article>
+                    <article>
+                        <header>
+                            <a href="#">Benjamin Franklin</a> on June 29th 2009 at 23:40
+                        </header>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.</p>
+                    </article>
+                    <article>
+                        <header>
+                            <a href="#">Barack Obama</a> on June 29th 2009 at 23:59
+                        </header>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.</p>
+                    </article>
+                </section>
+                <form action="#" method="post">
+                    <h3>
+                        Post a comment</h3>
+                    <p>
+                        <label for="name">
+                        Name</label>
+                        <input name="name" id="name" type="text" />
+                    </p>
+                    <p>
+                        <label for="email">
+                        E-mail</label>
+                        <input name="email" id="email" type="text" />
+                    </p>
+                    <p>
+                        <label for="website">
+                        Website</label>
+                        <input name="website" id="website" type="text" />
+                    </p>
+                    <p>
+                        <label for="comment">
+                        Comment</label>
+                        <textarea name="comment" id="comment"></textarea>
+                    </p>
+                    <p>
+                        <input type="submit" value="Post comment" /></p>
+                </form>
+            </div>
+            <aside class="col-lg-4 col-md-12 col-sm-12">
+                <section>
+                    <header>
+                        <h3>
+                            Categories</h3>
+                    </header>
+                    <ul>
+                        <li><a href="#">Lorem ipsum dolor</a></li>
+                        <li><a href="#">Sit amet consectetur</a></li>
+                        <li><a href="#">Adipisicing elit sed</a></li>
+                        <li><a href="#">Do eiusmod tempor</a></li>
+                        <li><a href="#">Incididunt ut labore</a></li>
+                    </ul>
+                </section>
+                <section>
+                    <header>
+                        <h3>
+                            Archives</h3>
+                    </header>
+                    <ul>
+                        <li><a href="#">December 2008</a></li>
+                        <li><a href="#">January 2009</a></li>
+                        <li><a href="#">February 2009</a></li>
+                        <li><a href="#">March 2009</a></li>
+                        <li><a href="#">April 2009</a></li>
+                        <li><a href="#">May 2009</a></li>
+                        <li><a href="#">June 2009</a></li>
+                    </ul>
+                </section>
+            </aside>
+        </div>
+
+
+    </div>
+    <footer class="container-fluid d-flex justify-content-center">
+        <div class="row">
+            <div class="col-lg-4 col-md-12 col-sm-12">
+                <section id="about">
+                    <header>
+                        <h3>
+                            About</h3>
+                    </header>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco <a href="#">laboris nisi ut aliquip</a> ex
+                        ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+                        laborum.
+                    </p>
+                </section>
+            </div>
+            <div class="col-lg-4 col-md-12 col-sm-12">
+                <section id="blogroll">
+                    <header>
+                        <h3>
+                            Blogroll</h3>
+                    </header>
+                    <ul>
+                        <li><a href="#">NETTUTS+</a></li>
+                        <li><a href="#">FreelanceSwitch</a></li>
+                        <li><a href="#">In The Woods</a></li>
+                        <li><a href="#">Netsetter</a></li>
+                        <li><a href="#">PSDTUTS+</a></li>
+                    </ul>
+                </section>
+            </div>
+            <div class="col-lg-4 col-md-12 col-sm-12">
+                <section id="popular">
+                    <header>
+                        <h3>
+                            Popular</h3>
+                    </header>
+                    <ul>
+                        <li><a href="#">This is the title of a blog post</a></li>
+                        <li><a href="#">Lorem ipsum dolor sit amet</a></li>
+                        <li><a href="#">Consectetur adipisicing elit, sed do eiusmod</a></li>
+                        <li><a href="#">Duis aute irure dolor</a></li>
+                        <li><a href="#">Excepteur sint occaecat cupidatat</a></li>
+                        <li><a href="#">Reprehenderit in voluptate velit</a></li>
+                        <li><a href="#">Officia deserunt mollit anim id est laborum</a></li>
+                        <li><a href="#">Lorem ipsum dolor sit amet</a></li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
