@@ -135,7 +135,9 @@ function removeFromCart(e) {
                 break
             }
         }
-        flag.pop(name);
+        console.log(name);
+        const id = flag.indexOf(name);
+        flag.splice(id, 1);
     })
     calculateBill()
 }
