@@ -1,0 +1,61 @@
+<!--
+ JavaScript Libraries jQuery Lab
+ Author: Mahmoud Mohamed Kamal
+ Date: 03-04-2022
+ File: index.html
+-->
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/items.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/script.js"></script>
+</head>
+
+<body>
+    <div class="cart-add-item hidden-cart">
+        <input type="button" value="+" class="amount_controler" id="plus">
+        <input type="button" value="-" class="amount_controler" id="minus">
+        <label>Amount:</label>
+        <label class="quantatiy value">1</label>
+        <input type="button" value="remove" class="removeBtn hidden">
+    </div>
+
+    <div class="container">
+        <div class="menu">
+            <h1>The Menu</h1>
+            <div class="item hidden">
+                <img class="item-image" />
+                <div class="item-name"> </div>
+                <label>Price:</label>
+                <div class="item-price"></div>
+                <input type="button" value="Select" class="selectBtn">
+            </div>
+        </div>
+        <div class="cart">
+            <h1>Your Cart</h1>
+        </div>
+        <div class="bill">
+            <label>Total:</label>
+            <label id="total"></label><br>
+            <label>Delivery:</label>
+            <label id="delivery"></label><br>
+            <label>VAT:</label>
+            <label id="VAT"></label><br>
+            <label>Order Total:</label>
+            <label id="order-total"></label>
+        </div>
+    </div>
+    <marquee>Created by: <a href="https://www.linkedin.com/in/mahmoudfierro98/" target=_ blank>Mahmoud Mohamed Kamal</a></marquee>
+</body>
+
+</html>

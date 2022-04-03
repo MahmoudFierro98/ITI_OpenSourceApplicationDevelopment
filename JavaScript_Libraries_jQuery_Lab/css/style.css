@@ -1,0 +1,114 @@
+/*
+ * JavaScript Libraries jQuery Lab
+ * Author: Mahmoud Mohamed Kamal
+ * Date: 03-04-2022
+ * File: css/style.css
+ */
+
+.container {
+    display: flex;
+    flex-direction: row;
+}
+
+.menu {
+    width: 30%;
+    height: 100%;
+    background-color: rgb(24, 6, 6);
+    color: white;
+    margin: 40px;
+    text-align: center;
+    align-content: center;
+    border-radius: 10px;
+}
+
+.cart {
+    width: 76%;
+    height: 100%;
+    background-color: rgb(32, 37, 83);
+    color: white;
+    margin: 40px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.item.hidden {
+    display: none;
+}
+
+.cart-add-item.hidden-cart {
+    display: none;
+}
+
+.item {
+    display: flex;
+    flex-direction: row;
+}
+
+.item-image {
+    width: 100px;
+    height: 100px;
+    margin: 15px;
+    border-radius: 10px;
+}
+
+.item-name {
+    text-align: middle;
+    margin: 15px;
+}
+
+.item-price {
+    text-align: center;
+    margin: 15px;
+}
+
+.selectBtn {
+    width: 50px;
+    height: 50px;
+    border-radius: 20px;
+    background-color: rgb(0, 0, 255);
+    color: white;
+}
+
+.removeBtn {
+    width: 60px;
+    height: 35px;
+    margin: 15px;
+    margin-left: 30px;
+    border-radius: 10px;
+    background-color: rgb(230, 19, 19);
+    color: white;
+}
+
+.cart-add-item {
+    display: flex;
+    flex-direction: row;
+}
+
+.amount_controler {
+    width: 35px;
+    height: 35px;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+.cart-add-item label {
+    margin: 15px;
+    text-align: center;
+    font-size: 25px;
+    color: rgb(228, 202, 202);
+}
+
+.bill {
+    text-align: left;
+    width: 300px;
+    height: 100%;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    border-radius: 10px;
+    margin: 15px;
+    padding: 10px;
+}
+
+.item label {
+    margin: 15px;
+}
