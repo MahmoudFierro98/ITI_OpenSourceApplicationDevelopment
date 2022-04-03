@@ -135,7 +135,6 @@ function removeFromCart(e) {
                 break
             }
         }
-        console.log(name);
         const id = flag.indexOf(name);
         flag.splice(id, 1);
     })
