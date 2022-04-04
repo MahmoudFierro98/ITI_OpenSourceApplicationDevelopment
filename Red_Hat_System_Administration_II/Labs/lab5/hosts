@@ -1,0 +1,2 @@
+client1 ansible_host=192.168.1.11 ansible_user=controller ansible_password=1234 ansible_become_password=1234 hostname=guest1 domain=wp1.ahmed.com
+client2 ansible_host=192.168.1.12 ansible_user=controller ansible_password=1234 ansible_become_password=1234 hostname=guest2 domain=wp2.ahmed.com

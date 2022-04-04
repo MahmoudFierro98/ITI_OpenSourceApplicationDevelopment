@@ -1,0 +1,12 @@
+---
+- name: Rename hosts
+become: yes
+hosts: all
+gather_facts: no
+tasks:
+- name: Rename a host
+ansible.builtin.hostname:
+name: "{{ hostname }}"
+- name: Install apache2
+ansible.builtin.package:
+name: apache2

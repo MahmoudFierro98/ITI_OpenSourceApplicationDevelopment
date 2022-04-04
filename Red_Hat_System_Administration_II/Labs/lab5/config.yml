@@ -1,0 +1,75 @@
+---
+- name: Rename hosts
+  become: yes
+  hosts: all
+  gather_facts: no
+  tasks:
+
+      - name: Rename a host
+        ansible.builtin.hostname:
+                   name: "{{ hostname }}"
+
+      - name: installing apache
+        ansible.builtin.package:
+                   name: apache2
+                   state: present
+
+      - name: enabled mod_rewrite
+        apache2_module:
+                    name=rewrite
+                    state=present
+        notify:
+          - restart apache2
+     
+      - name: create virtual host file
+        ansible.builtin.template:
+                    src: virtualhost.conf
+                    dest: /etc/apache2/sites-available/{{ domain }}.conf
+        notify:
+          - restart apache2
+
+      - name: a2ensite "{{ domain }}"
+        command: a2ensite "{{ domain }}"
+        notify:
+          - restart apache2
+      
+      - name: Install dependencies for wordpress
+        apt: 
+         name={{ item }}
+         state=present
+        with_items:
+         - python3-pip
+         - mariadb-server
+         - php
+         - php-mysql
+         
+      - name: Install Required pip modules
+        pip:
+         name:
+          - PyMySQL
+         state: present
+         executable: pip3
+         
+      - name: Ensure MariaDB is running (and enable it at boot)
+        service: name=mariadb state=started enabled=yes
+
+      - name: Copy ~/.my.cnf to nodes
+        copy: src=~/.my.cnf dest=/root/.my.cnf
+
+      - name: Create MariaDB user
+        community.mysql.mysql_user: name=wpuser password=1234 state=present login_user=root login_password=1234 priv=*.*:ALL
+
+      - name: Create MariaDB database
+        mysql_db: name=wpdatabase state=present
+
+      - name: Download WordPress
+        get_url: url=https://www.wordpress.org/latest.tar.gz dest=/var/www/html/wordpress.tar.gz validate_certs=no
+
+      - name: Extract WordPress
+        command: "tar xzf /var/www/html/wordpress.tar.gz -C  /var/www/html"
+      
+      - name: copy configuration file of wordpress
+        copy: src=~/wp-config.php dest=/var/www/html/wordpress/wp-config.php mode=0644
+  handlers:
+      - name: restart apache2
+        service: name=apache2 state=restarted
