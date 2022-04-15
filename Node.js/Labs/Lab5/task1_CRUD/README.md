@@ -7,10 +7,10 @@
 ## Process:
  ```
    npm install
-   ```
-    ```
+ ```
+ ```
     npm start
-    ```
+ ```
 
 ## Built with
 
