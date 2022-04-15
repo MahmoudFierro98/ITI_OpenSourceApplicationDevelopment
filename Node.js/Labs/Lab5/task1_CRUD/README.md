@@ -9,7 +9,7 @@
    npm install
  ```
  ```
-    npm start
+   npm start
  ```
 
 ## Built with
