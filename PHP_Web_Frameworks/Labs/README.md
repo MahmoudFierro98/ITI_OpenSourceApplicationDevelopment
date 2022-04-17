@@ -18,7 +18,7 @@
 
 - Installation Via Composer \
 ![alt text](./static/Installation_Via_Composer.PNG)
-- Actions Handled By Resource Controller
+- Actions Handled By Resource Controller \
 ![alt text](./static/Actions_Handled_By_Resource_Controller.PNG)
 
 ### GIF Day 1
