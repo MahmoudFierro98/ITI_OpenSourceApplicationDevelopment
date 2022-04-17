@@ -6,7 +6,7 @@
 ## Table of contents
 
 - [Overview](#overview)
-    - [Introduction](#gif)
+    - [Introduction](#introduction)
     - [GIF Day 1](#gif-day-1)
     - [Process](#process)
     - [Built with](#built-with)
