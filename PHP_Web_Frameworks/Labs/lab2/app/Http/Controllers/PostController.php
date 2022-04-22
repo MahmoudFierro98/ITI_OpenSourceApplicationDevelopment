@@ -45,8 +45,12 @@ class PostController extends Controller
 
     public function show($postId)
     {
-        $post=post::find($postId);
-        return view("posts.show",["post"=>$post]);
+        $post = post::find($postId);
+        $users =  User::all();
+        return view("posts.show", [
+            'post' => $post,
+            'users' => $users,
+        ]);
     }
 
     public function edit($postId)
@@ -61,18 +65,18 @@ class PostController extends Controller
 
     public function update()
     {
-        $req=request()->all();
-        post::where('id',$req['id'])->update([
-            'title'=>$req['title'],
-            'description'=>$req['description'],
-            'user_id'=>$req['creator']
+        $req = request()->all();
+        post::where('id', $req['id'])->update([
+            'title' => $req['title'],
+            'description' => $req['description'],
+            'user_id' => $req['creator']
         ]);
-       return to_route('posts.index');
+        return to_route('posts.index');
     }
 
     public function delete($postId)
     {
-        post::where('id',$postId)->delete();
+        post::where('id', $postId)->delete();
         return to_route('posts.index');
     }
 }

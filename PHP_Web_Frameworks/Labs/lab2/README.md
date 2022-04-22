@@ -9,6 +9,7 @@
     - [Introduction](#introduction)
     - [GIF Day 1](#gif-day-1)
     - [GIF Day 2 - Part 1](#gif-day-2---part-1)
+    - [GIF Day 2 - Part 2](#gif-day-2---part-2)
     - [Process](#process)
     - [Built with](#built-with)
 - [Author](#authors)
@@ -30,6 +31,10 @@
 ### GIF Day 2 - Part 1
 
 ![screen-gif](./static/DAY2.1.gif)
+
+### GIF Day 2 - Part 2
+
+![screen-gif](./static/DAY2.2.gif)
 
 ### Process
 

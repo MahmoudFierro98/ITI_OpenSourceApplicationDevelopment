@@ -3,7 +3,8 @@
 @section('title')Edit @endsection
 
 @section('content')
-<form method="POST" action="{{ route('posts.update') }}">
+<form method="POST" action="{{ route('posts.update', ['post' => $post['id']]) }}">
+    @method('PUT')
     @csrf
     <input type="hidden" name="id" value={{ $post['id'] }} class="form-control" id="exampleFormControlInput1">
     <div class="mb-3">
