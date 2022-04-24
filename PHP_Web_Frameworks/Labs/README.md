@@ -10,6 +10,7 @@
     - [GIF Day 1](#gif-day-1)
     - [GIF Day 2 - Part 1](#gif-day-2---part-1)
     - [GIF Day 2 - Part 2](#gif-day-2---part-2)
+    - [GIF Day 3](#gif-day-3)
     - [Process](#process)
     - [Built with](#built-with)
 - [Author](#authors)
@@ -36,13 +37,20 @@
 
 ![screen-gif](./static/DAY2.2.gif)
 
+### GIF Day 3
+
+![screen-gif](./static/DAY3.gif)
+
 ### Process
 
  ```
-   php artisan migrate
+  php artisan migrate
  ```
  ```
-   php artisan serve
+  php artisan storage:link
+ ```
+ ```
+  php artisan serve
  ```
 
 ### Built with
