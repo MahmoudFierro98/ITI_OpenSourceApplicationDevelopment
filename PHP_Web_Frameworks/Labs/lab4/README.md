@@ -1,6 +1,7 @@
 # PHP Web Frameworks (Laravel) Labs
 
-[Labs in my main iti repository](https://github.com/MahmoudFierro98/ITI_OpenSourceApplicationDevelopment/tree/main/PHP_Web_Frameworks/Labs)  
+[Linkedin Video](https://www.linkedin.com/posts/mahmoudfierro98_blog-laravel-iti-activity-6924238233144807424-XPlV/) \
+[Labs in my main iti repository](https://github.com/MahmoudFierro98/ITI_OpenSourceApplicationDevelopment/tree/main/PHP_Web_Frameworks/Labs) \
 [Labs in Laravel repository](https://github.com/MahmoudFierro98/iti-laravel-labs)  
 
 ## Table of contents
