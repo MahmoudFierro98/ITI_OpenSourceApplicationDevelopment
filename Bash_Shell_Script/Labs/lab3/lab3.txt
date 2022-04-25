@@ -1,0 +1,24 @@
+1-MySQL Database
+	1-table inv_master
+		(k)invID	int
+		custname	varchar(100)
+		invdate		date
+		invtotal	float
+	2-tabe inv_detail
+		(k)seq	auto
+		(fk)invID	int
+		itemname	varchar(50)
+		unitprice	int
+		quantity	int
+2-Multi file script
+	1-checker
+		1-Database exists or no, if no create it
+		2-Check tables (not exist, create it)
+		3-invoice exists
+		4-invoice has details
+	2-dataop	(Refrential integrity)
+		1-Insert new invoice
+		2-Delete existing invoice
+		3-Display invoice
+	3-Menu
+	4-Main script
