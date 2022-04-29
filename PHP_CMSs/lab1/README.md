@@ -4,7 +4,7 @@
 - [1- install WordPress](#1--install-WordPress)
 - [2- install theme](#2--install-theme)
 - [3- create homepage](#3--create-homepage)
-- [4- create post category & 5- create post](#4--create-post-category---5--create-post)
+- [4- create post category & 5- create post](#4--create-post-category--5--create-post)
 - [6- create contact page with contact form](#6--create-contact-page-with-contact-form)
 - [Author](#authors)
 
@@ -17,7 +17,7 @@
 - Customize the theme: 
 ![screen-gif](./GIFs/LAB1.2.1.gif)
 
-## 3- create homepagee
+## 3- create homepage
 ![screen-gif](./GIFs/LAB1.3.gif)
 
 ## 4- create post category & 5- create post
