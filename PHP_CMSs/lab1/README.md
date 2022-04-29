@@ -1,4 +1,4 @@
-# PHP PHP CMSs (WordPress) - Lab 1
+# PHP CMSs (WordPress) - Lab 1
 
 ## Table of contents
 - [1- install WordPress](#1--install-WordPress)
