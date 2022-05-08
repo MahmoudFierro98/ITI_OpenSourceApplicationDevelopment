@@ -1,5 +1,5 @@
 # Angular - Lab 1
-[iti-Angular-labs](https://github.com/MahmoudFierro98/iti-Angular-labs/tree/main/Lab1)
+[iti-Angular-labs/Lab1](https://github.com/MahmoudFierro98/iti-Angular-labs/tree/main/Lab1)
 
 ## 1- Install latest version Node , Then use npm to install angular cli globally.
 1- Install node.js last version https://nodejs.org/en/download/ \
