@@ -23,7 +23,7 @@ $ cd Lab1
 
 ## 3- Serve the application.
 ```
-$ ng new Lab1
+$ ng serve --o
 ```
 ![alt text](./Screenshots/Lab1_Task3.PNG)
 
