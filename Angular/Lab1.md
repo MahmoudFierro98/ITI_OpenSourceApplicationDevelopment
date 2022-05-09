@@ -46,6 +46,7 @@ $ npm install jquery --
 $ ng g c department
 ```
 ![alt text](./Screenshots/Lab1_Task6.1.PNG)
+![alt text](./Screenshots/Lab1_Task6.2.PNG)
 
 ## 7- Use redtie html to create components ( Header , Footer , Sidebar )
 ```
