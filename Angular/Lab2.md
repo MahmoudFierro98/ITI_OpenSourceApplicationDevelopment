@@ -42,7 +42,7 @@ $ ng g m student
 ```
 $ ng g c student/student
 ```
-![screen-gif](./static/Lab2_Task6.gif)
+![screen-gif](./Screenshots/Lab2_Task6.gif)
 
 ## 7- Create department module.
 ```
@@ -54,7 +54,7 @@ $ ng g m department
 ```
 $ ng g c department/department
 ```
-![screen-gif](./static/Lab2_Task8.gif)
+![screen-gif](./Screenshots/Lab2_Task8.gif)
 
 ## Authors
 * LinkedIn - [Mahmoud Mohamed Kamal](https://www.linkedin.com/in/mahmoudfierro98)
