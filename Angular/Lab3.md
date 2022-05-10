@@ -69,8 +69,8 @@ export class ArraySplicePipe implements PipeTransform {
 ```
 ![alt text](./Screenshots/Lab3_Task3.PNG)
 
-## 4- PrimeNG
-(PrimeNG)[https://www.primefaces.org/primeng/setup].
+## 4- [PrimeNG](https://www.primefaces.org/primeng/setup).
+
 ```
 $ npm install primeng --save
 ```
@@ -80,8 +80,7 @@ $ npm install primeicons --save
 ![alt text](./Screenshots/Lab3_Task4.2.PNG)
 ![alt text](./Screenshots/Lab3_Task4.1.PNG)
 
-## 5- Angular Material
-(Angular Material)[https://material.angular.io/guide/getting-started].
+## 5- [Angular Material](https://material.angular.io/guide/getting-started).
 ```
 $ ng add @angular/material --skip-confirmation
 ```
