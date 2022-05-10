@@ -77,8 +77,8 @@ $ npm install primeng --save
 ```
 $ npm install primeicons --save
 ```
-![alt text](./Screenshots/Lab3_Task4.1.PNG)
 ![alt text](./Screenshots/Lab3_Task4.2.PNG)
+![alt text](./Screenshots/Lab3_Task4.1.PNG)
 
 ## 5- Angular Material
 (Angular Material)[https://material.angular.io/guide/getting-started].
