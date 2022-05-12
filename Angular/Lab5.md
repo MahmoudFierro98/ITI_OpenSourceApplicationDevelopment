@@ -3,9 +3,9 @@
 
 ![screen-gif](./Screenshots/Lab5.gif)
 
-## Create new project "Lab4"
+## Create new project "Lab5"
 ```
-$ ng new Lab4
+$ ng new Lab5
 ```
 ![alt text](./Screenshots/Lab5.PNG)
 
