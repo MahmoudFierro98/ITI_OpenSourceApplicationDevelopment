@@ -3,7 +3,7 @@
 
 ![screen-gif](./Lab1.gif)
 
-## Create new project "1ab1"
+## Create new project "lab1"
 ```
 $ npx create-react-app lab1
 ```
