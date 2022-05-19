@@ -36,9 +36,9 @@ $ npm start
 $ json-server --watch --port 3003
 ```
 
-## [React lifecycle methods diagram](https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/)
+- [React lifecycle methods diagram](https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/)
 
-# Authors
+# Author
 * LinkedIn - [Mahmoud Mohamed Kamal](https://www.linkedin.com/in/mahmoudfierro98)
 
 <p align="right">(<a href="#top">Top</a>)</p>
