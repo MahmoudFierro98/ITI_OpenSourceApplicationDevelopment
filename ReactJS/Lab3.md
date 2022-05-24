@@ -33,7 +33,7 @@ $ npm i json-server -g
 $ npm start
 ```
 ```
-$ json-server --watch --port 3003
+$ json-server db.json --watch --port 3003
 ```
 
 - [React lifecycle methods diagram](https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/)
