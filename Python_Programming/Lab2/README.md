@@ -96,7 +96,7 @@ u
 ## [Copy in Python (Deep Copy and Shallow Copy)](https://www.geeksforgeeks.org/copy-python-deep-copy-shallow-copy/)
 A copy is sometimes needed so one can change one copy without changing the other. In Python, there are two ways to create copies: 
 - Deep copy
-- Shallow copy
+- Shallow copy \
 Example (deepcopy):
 ```
 # importing "copy" for copy operations
