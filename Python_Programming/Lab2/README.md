@@ -191,7 +191,7 @@ Output:
 [(0, 'A'), (1, 'B'), (2, 'C'), (3, 'D')]
 ```
 
-## [3- Import operator module](https://www.javatpoint.com/operator-module-in-python)
+## [Import operator module](https://www.javatpoint.com/operator-module-in-python)
 
 # Author
 * LinkedIn - [Mahmoud Mohamed Kamal](https://www.linkedin.com/in/mahmoudfierro98)
