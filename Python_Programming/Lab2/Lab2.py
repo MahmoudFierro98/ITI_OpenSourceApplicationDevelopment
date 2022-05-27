@@ -181,7 +181,7 @@ def addEmployee():
     return Employee(0, full_name, money, sleepMood, healthRate, email, workMood, salary, is_manager)
 
 def addAction(employee):
-    emp = Employee(employee[0], employee[1], employee[4], employee[5], employee[6], employee[2], employee[7], employee[3], employee[8])
+    emp = Employee(employee[0], employee[1], employee[4], employee[5], employee[7], employee[2], employee[6], employee[3], employee[8])
     print(''' Actions Menu:   
         1. Sleep
         2. Work
