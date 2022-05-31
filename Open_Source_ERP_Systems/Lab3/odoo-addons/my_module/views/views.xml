@@ -1,0 +1,185 @@
+<!--<odoo>-->
+<!--  <data>-->
+<!-- explicit list view definition -->
+<!--
+    <record model="ir.ui.view" id="my_module.list">
+      <field name="name">my_module list</field>
+      <field name="model">my_module.my_module</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+-->
+
+<!-- actions opening views on models -->
+<!--
+    <record model="ir.actions.act_window" id="my_module.action_window">
+      <field name="name">my_module window</field>
+      <field name="res_model">my_module.my_module</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+-->
+
+<!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="my_module.action_server">
+      <field name="name">my_module server</field>
+      <field name="model_id" ref="model_my_module_my_module"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+<!-- Top menu item -->
+<!--
+    <menuitem name="my_module" id="my_module.menu_root"/>
+-->
+<!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="my_module.menu_1" parent="my_module.menu_root"/>
+    <menuitem name="Menu 2" id="my_module.menu_2" parent="my_module.menu_root"/>
+-->
+<!-- actions -->
+<!--
+    <menuitem name="List" id="my_module.menu_1_list" parent="my_module.menu_1"
+              action="my_module.action_window"/>
+    <menuitem name="Server to list" id="my_module" parent="my_module.menu_2"
+              action="my_module.action_server"/>
+-->
+<!--  </data>-->
+<!--</odoo>-->
+
+
+<odoo>
+    <data>
+        <!-- explicit list view definition -->
+
+        <record model="ir.ui.view" id="my_module.call_lig_form">
+            <field name="name">Call Log list</field>
+            <field name="model">my_module.call.log</field>
+            <field name="arch" type="xml">
+                <form>
+                  <header>
+                     <button name="compute_usd" string="Compute USD" type="object"/>
+                  </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="timestamp"/>
+                                <field name="customer"/>
+                                <field name="package_id"/>
+                            </group>
+                            <group>
+                                <field name="from_number"/>
+                                <field name="to_number"/>
+                                <field name="duration"/>
+                                <field name="price"/>
+                                <field name="usd_price"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="my_module.call_lig_list">
+            <field name="name">Call Log list</field>
+            <field name="model">my_module.call.log</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="timestamp"/>
+                    <field name="customer"/>
+                    <field name="from_number"/>
+                    <field name="to_number"/>
+                    <field name="duration"/>
+                    <field name="price"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="my_module.call_lig_search">
+            <field name="name">Call Log list</field>
+            <field name="model">my_module.call.log</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="timestamp"/>
+                    <field name="customer"/>
+                    <field name="from_number"/>
+                    <field name="to_number"/>
+                    <field name="price"/>
+                    <filter string="Price above 50" name="price_above" domain="[('price', '&gt;=', 50.0)]"/>
+                    <group expand="1" string="Group By">
+                        <filter string="Customer" name="customer" context="{'group_by':'customer'}"/>
+                    </group>
+                    
+                </search>
+            </field>
+        </record>
+        <record model="ir.actions.server" id="compute_usd_action">
+          <field name="name">Compute to USD</field>
+          <field name="model_id" ref="model_my_module_call_log"/>
+          <field name="state">code</field>
+          <field name="code">
+              for rec in records:
+                  rec.compute_usd()
+          </field>
+        </record>
+
+
+        <!-- actions opening views on models -->
+        <record model="ir.actions.act_window" id="my_module.package_action_window">
+            <field name="name">package</field>
+            <field name="res_model">my_module.package</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="my_module.call_log_action_window">
+            <field name="name">Call Log</field>
+            <field name="res_model">my_module.call.log</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <!-- server action to the one above -->
+        <!--
+            <record model="ir.actions.server" id="my_module.action_server">
+              <field name="name">my_module server</field>
+              <field name="model_id" ref="model_my_module_my_module"/>
+              <field name="state">code</field>
+              <field name="code">
+                action = {
+                  "type": "ir.actions.act_window",
+                  "view_mode": "tree,form",
+                  "res_model": model._name,
+                }
+              </field>
+            </record>
+        -->
+
+        <!-- Top menu item -->
+        <menuitem name="sec Lab Test" id="my_module.menu_root"/>
+
+        <!-- menu categories -->
+
+        <menuitem name="operations" id="my_module.operations" parent="my_module.menu_root"/>
+        <!--    <menuitem name="Package" id="my_module.menu_2" parent="my_module.menu_root"/>-->
+
+        <!-- actions -->
+
+        <menuitem name="Call Log" id="my_module.call" parent="my_module.operations"
+                  action="my_module.call_log_action_window"/>
+        <menuitem name="Packages" id="my_module.ope" parent="my_module.operations"
+                  action="my_module.package_action_window"/>
+
+    </data>
+</odoo>

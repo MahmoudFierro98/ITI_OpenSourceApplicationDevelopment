@@ -1,0 +1,30 @@
+<odoo>
+    <data>
+        <template id="report_call_log_view">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.html_container">
+                    <t t-call="web.external_layout">
+                        <div class="page">
+                            <h1 t-field="doc.customer.name"/>
+                            <h1 t-field="doc.timestamp"/>
+                            <h1 t-field="doc.from_number"/>
+                            <h1 t-field="doc.to_number"/>
+                            <h1 t-field="doc.price"/>
+                            <span t-field="doc.duration"/>
+
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+        <record id="call_report" model="ir.actions.report">
+            <field name="name">Call Log</field>
+            <field name="model">my_module.call.log</field>
+            <field name="report_type">qweb-html</field>
+            <field name="report_name">my_module.report_call_log_view</field>
+            <field name="report_file">report_call_log_view"</field>
+            <field name="binding_model_id" ref="model_my_module_call_log"/>
+            <field name="binding_type">report</field>
+        </record>
+    </data>
+</odoo>
