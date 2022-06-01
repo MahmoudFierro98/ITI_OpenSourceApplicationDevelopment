@@ -9,9 +9,9 @@
 npm i -g @vue/cli
 ```
 
-- Create new project "lab1"
+- Create new project "lab2"
 ```
-vue create lab1
+vue create lab2
 ```
 
 - Run 
@@ -21,6 +21,9 @@ cd lab1
 ```
 npm run serve
 ``` 
+```
+json-server data.json --watch --port 2000
+```
 
 - Install Packages 
 ```
