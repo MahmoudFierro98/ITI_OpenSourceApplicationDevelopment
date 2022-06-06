@@ -26,7 +26,7 @@ python first_app/manage.py runserver
 cd first_app
 ```
 ```
-django-admin startapp todom i bootstrap
+django-admin startapp todo
 ```
 
 # Author
