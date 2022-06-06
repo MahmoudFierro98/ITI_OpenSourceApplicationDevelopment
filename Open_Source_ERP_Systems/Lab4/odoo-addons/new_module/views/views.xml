@@ -1,0 +1,26 @@
+<odoo>
+    <data>
+        <record id="call_log_inherited_view" model="ir.ui.view">
+            <field name="name">call log inherited</field>
+            <field name="model">my_module.call.log</field>
+            <field name="inherit_id" ref="my_module.call_lig_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='notes']" position="before">
+                    <page string="Desc.">
+                        <field name="description"/>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+        <record id="call_log_inherited_sec_view" model="ir.ui.view">
+            <field name="name">call log inherited list</field>
+            <field name="model">my_module.call.log</field>
+            <field name="inherit_id" ref="my_module.call_lig_list"/>
+            <field name="arch" type="xml">
+                <field name="duration" position="before">
+                    <field name="description"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>
