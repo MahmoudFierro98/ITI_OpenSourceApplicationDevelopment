@@ -1,7 +1,7 @@
 # Django - Lab 2
 [iti-Django-labs/Lab2](https://github.com/MahmoudFierro98/iti-Django-labs/tree/main/Lab2)
 
-![screen-gif](./Lab2.gif)
+![screen-gif](./Django-Lab2.gif)
 
 ## Commands
 ```
