@@ -1,0 +1,40 @@
+
+<%= form_with model: book do |form|%>
+    <div>
+        <%= form.label  :name %><br>
+        <%= form.text_field :name %><br>
+        <% @book.errors.full_messages_for(:name).each do |message| %>
+        <div> <%= message %></div>
+        <% end %>
+    </div>
+    <div>
+        <%= form.label  :image %><br>
+        <%= form.text_field :image %><br>
+        <%= form.file_field :image, class: "form-control " %>
+    </div>
+
+    <div>
+        <%= form.label  :price %><br>
+        <%= form.text_field :price %><br>
+        <% @book.errors.full_messages_for(:price).each do |message| %>
+        <div> <%= message %> </div>
+        <% end %>
+    </div>
+
+    <div>
+        <%= form.label  :description %><br>
+        <%= form.text_field :description %><br>
+    </div>
+   <div>
+        <%= form.label  :user_id %><br>
+        <%= form.text_field :user_id %><br>
+        <% @book.errors.full_messages_for(:user_id).each do |message| %>
+        <div> <%= message %> </div>
+        <% end %>
+    </div>
+    <div>
+        <%= form.submit %>
+        
+    </div>
+
+<%end%>

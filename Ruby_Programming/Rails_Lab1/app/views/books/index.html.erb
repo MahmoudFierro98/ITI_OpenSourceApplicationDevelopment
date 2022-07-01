@@ -1,0 +1,64 @@
+<head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<h1>Books</h1>
+<%= link_to "create new book" ,new_book_path %>
+<table class="table">
+  
+    <tr>
+      
+      <th scope="col">Name</th>
+      <th scope="col">Image</th>
+      <th scope="col">Price</th>
+      <th scope="col">Created_at</th>
+      <th>Updated_At</th>
+      <th>Action</th>
+      <th>created By</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+        <% @books.each do |book| %>
+        <tr>
+            <td>
+                <%= book.name %>
+            </td>
+            <td>
+                <%= book.image %>
+            </td>
+            <td>
+                <%= book.price %>
+            </td>
+           
+            <td>
+                <%= book.created_at %>
+            </td>
+            <td>
+                <%= book.updated_at %>
+            </td>
+            <td>
+                <a href="<%=book_path(book) %>" class="btn btn-primary">Show</a>
+                <%# <%=link_to book.name,book %> 
+                <a href="<%=edit_book_path(book)%>" class="btn btn-success">update</a>
+                <a  class="btn btn-danger"
+                 <%= link_to "Delete", book_path(book), data: {
+               turbo_method: :delete,
+               turbo_confirm: "Are you sure?"
+             } %> 
+                </a>
+                
+            </td>
+
+            <td>
+                <%= book.user.name %>
+            </td>
+        
+        </tr>
+        
+    </tbody>
+
+        <% end %>
+</table>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
