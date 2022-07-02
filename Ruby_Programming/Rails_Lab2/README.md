@@ -1,4 +1,4 @@
-# Ruby Programming (Rails) - Lab 3
+# Ruby Programming (Rails) - Lab 4
 
 # Process
 ```
