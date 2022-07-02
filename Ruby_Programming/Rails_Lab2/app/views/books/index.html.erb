@@ -1,0 +1,28 @@
+
+
+<h1>Books</h1>
+
+<div id="books">
+  <% @books.each do |book| %>
+    <%= render book %>
+
+    <td>
+      <% if can? :update, book%>
+      <%= link_to "Edit" ,  edit_book_path(book) %>
+      <% end %>
+    </td>
+
+    <td>
+      <% if can? :destory, book%>
+      <%= link_to "Destroy" ,  method: :delete,
+      data:{ confirm: "are you sure? "} %>
+      <% end %>
+    </td>
+    <p>
+      <%= link_to "Show this book", book %>
+    </p>
+  <% end %>
+</div>
+<% if can? :create, Book %>
+<%= link_to "New book", new_book_path %>
+<%end%>
